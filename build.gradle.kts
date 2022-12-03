@@ -7,6 +7,37 @@ plugins {
 }
 
 allprojects {
+
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+        kotlinOptions {
+            // Treat all Kotlin warnings as errors
+            allWarningsAsErrors = true
+
+            // Enable experimental coroutines APIs, including Flow
+            freeCompilerArgs += listOf(
+                "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+                "-opt-in=kotlinx.coroutines.FlowPreview",
+                "-opt-in=kotlin.Experimental",
+            )
+
+            if (project.hasProperty("newsly.enableComposeCompilerReports")) {
+                freeCompilerArgs += listOf(
+                    "-P",
+                    "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=" +
+                            project.buildDir.absolutePath + "/compose_metrics",
+                )
+                freeCompilerArgs += listOf(
+                    "-P",
+                    "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=" +
+                            project.buildDir.absolutePath + "/compose_metrics",
+                )
+            }
+
+            // Set JVM target to 11
+            jvmTarget = JavaVersion.VERSION_11.toString()
+        }
+    }
+
     plugins.withId(rootProject.libs.plugins.hilt.get().pluginId) {
         extensions.getByType<dagger.hilt.android.plugin.HiltExtension>().enableAggregatingTask =
             true
