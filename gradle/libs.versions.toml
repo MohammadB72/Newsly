@@ -1,10 +1,17 @@
 [versions]
+compileSdk = "33"
+minSdk = "23"
+targetSdk = "31"
+
 androidGradlePlugin = "7.3.1"
 androidxActivity = "1.6.1"
 androidxCore = "1.9.0"
 androidxlifecycle = "2.5.1"
 compose-bom = "2022.11.00"
-kotlin = "1.7.21"
+composecompiler = "1.4.0-alpha02"
+hilt = "2.44.2"
+kotlin = "1.7.20"
+retrofit = "2.9.0"
 
 [libraries]
 androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
@@ -18,7 +25,15 @@ androidx-activity-compose = { group = "androidx.activity", name = "activity-comp
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidxlifecycle" }
 
+hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+hilt-library = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+
+retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
