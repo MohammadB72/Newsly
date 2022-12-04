@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "app.newsly.feature.splashscreen"
+    namespace = "app.newsly.feature.main"
     buildFeatures {
         compose = true
     }

@@ -1,4 +1,4 @@
-package app.newsly.ui.theme
+package app.newsly.core.designsystem.theme
 
 import android.app.Activity
 import android.os.Build

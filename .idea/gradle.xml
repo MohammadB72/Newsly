@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/feature/apps" />
             <option value="$PROJECT_DIR$/feature/categories" />
             <option value="$PROJECT_DIR$/feature/editorchoice" />
+            <option value="$PROJECT_DIR$/feature/main" />
             <option value="$PROJECT_DIR$/feature/news" />
             <option value="$PROJECT_DIR$/feature/splashscreen" />
           </set>

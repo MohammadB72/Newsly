@@ -9,6 +9,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.hilt.library)
+    implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
 }
