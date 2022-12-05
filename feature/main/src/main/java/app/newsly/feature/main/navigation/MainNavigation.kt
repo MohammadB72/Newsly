@@ -16,24 +16,14 @@ fun NavController.navigateToMainGraph(navOptions: NavOptions? = null) {
     this.navigate(mainGraphRoutePattern, navOptions)
 }
 
-fun NavGraphBuilder.mainGraph(
-    navigateToNews: () -> Unit,
-    navigateToEditorChoice: () -> Unit,
-    navigateToCategories: () -> Unit,
-    navigateToApps: () -> Unit,
-) {
+fun NavGraphBuilder.mainGraph() {
     navigation(
         startDestination = mainRoute,
         route = mainGraphRoutePattern
     )
     {
         composable(route = mainRoute) {
-            MainRoute(
-                navigateToNews = navigateToNews,
-                navigateToEditorChoice = navigateToEditorChoice,
-                navigateToCategories = navigateToCategories,
-                navigateToApps = navigateToApps
-            )
+            MainRoute()
         }
     }
 }

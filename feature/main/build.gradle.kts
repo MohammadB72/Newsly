@@ -14,6 +14,10 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:news"))
+    implementation(project(":feature:editorchoice"))
+    implementation(project(":feature:categories"))
+    implementation(project(":feature:apps"))
     implementation(project(":core:designsystem"))
     implementation(libs.androidx.hilt.navigation.compose)
 }
