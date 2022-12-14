@@ -18,6 +18,9 @@ dependencies {
     implementation(project(":feature:editorchoice"))
     implementation(project(":feature:categories"))
     implementation(project(":feature:apps"))
+
     implementation(project(":core:designsystem"))
+    implementation(project(":core:domain"))
+
     implementation(libs.androidx.hilt.navigation.compose)
 }

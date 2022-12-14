@@ -23,9 +23,9 @@ fun MainScreen(
 ) {
     Scaffold(
         modifier = Modifier,
-        topBar = {},
+        topBar = { TopAppBar() },
         bottomBar = {
-            NewslyBottomBar(
+            BottomBar(
                 destinations = mainScreenState.topLevelDestinations,
                 currentDestination = mainScreenState.currentDestination,
                 onNavigateToDestination = mainScreenState::navigateToTopLevelDestination
@@ -38,16 +38,16 @@ fun MainScreen(
 }
 
 @Composable
-private fun NewslyBottomBar(
+private fun BottomBar(
     destinations: List<TopLevelDestination>,
     currentDestination: TopLevelDestination?,
     onNavigateToDestination: (TopLevelDestination) -> Unit
 ) {
     NavigationBar {
         destinations.forEach { destination ->
-            val selected = true
+            val selected = currentDestination == destination
             NavigationBarItem(
-                selected = currentDestination == destination,
+                selected = selected,
                 onClick = { onNavigateToDestination(destination) },
                 icon = {
                     if (selected) destination.selectedIcon.ToIcon() else destination.unselectedIcon.ToIcon()
@@ -56,4 +56,23 @@ private fun NewslyBottomBar(
             )
         }
     }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun TopAppBar(
+    modifier: Modifier = Modifier,
+    topAppBarState: TopAppBarState = rememberTopAppBarState(),
+    scrollBehavior: TopAppBarScrollBehavior? = TopAppBarDefaults.enterAlwaysScrollBehavior(
+        topAppBarState
+    )
+) {
+    val title = stringResource(id = R.string.app_name)
+    CenterAlignedTopAppBar(
+        title = {
+            Text(text = title)
+        },
+        scrollBehavior = scrollBehavior,
+        modifier = modifier
+    )
 }

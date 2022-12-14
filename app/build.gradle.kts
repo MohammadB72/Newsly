@@ -47,7 +47,7 @@ android {
 
 dependencies {
     implementation(project(":feature:main"))
-    implementation(project(":feature:splashscreen"))
+    implementation(project(":feature:splash"))
     implementation(project(":core:designsystem"))
 
     implementation(libs.androidx.core.ktx)

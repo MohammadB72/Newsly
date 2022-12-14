@@ -27,8 +27,8 @@ enum class TopLevelDestination(
         titleTextId = R.string.categories
     ),
     Apps(
-        selectedIcon = ImageVectorIcon(NewslyIcons.EditorChoice),
-        unselectedIcon = ImageVectorIcon(NewslyIcons.EditorChoiceBorder),
+        selectedIcon = ImageVectorIcon(NewslyIcons.Apps),
+        unselectedIcon = ImageVectorIcon(NewslyIcons.AppsBorder),
         titleTextId = R.string.apps
     )
 }

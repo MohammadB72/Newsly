@@ -4,12 +4,12 @@ import androidx.annotation.DrawableRes
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Apps
 import androidx.compose.material.icons.outlined.Category
-import androidx.compose.material.icons.outlined.Interests
 import androidx.compose.material.icons.outlined.Newspaper
+import androidx.compose.material.icons.outlined.Star
 import androidx.compose.material.icons.rounded.Apps
 import androidx.compose.material.icons.rounded.Category
-import androidx.compose.material.icons.rounded.Interests
 import androidx.compose.material.icons.rounded.Newspaper
+import androidx.compose.material.icons.rounded.Star
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
@@ -19,8 +19,8 @@ object NewslyIcons {
     val News = Icons.Rounded.Newspaper
     val NewsBorder = Icons.Outlined.Newspaper
 
-    val EditorChoice = Icons.Rounded.Interests
-    val EditorChoiceBorder = Icons.Outlined.Interests
+    val EditorChoice = Icons.Rounded.Star
+    val EditorChoiceBorder = Icons.Outlined.Star
 
     val Categories = Icons.Rounded.Category
     val CategoriesBorder = Icons.Outlined.Category
