@@ -4,6 +4,6 @@ import app.newsly.core.model.network.ServerStatusNetworkModel
 import retrofit2.http.GET
 
 interface ServerStatusApi {
-    @GET(value = "digiato-appp.php")
+    @GET(value = "digiato-app.php")
     suspend fun getServerStatus(): ServerStatusNetworkModel
 }
