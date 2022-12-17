@@ -9,7 +9,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:model"))
+    implementation(project(":shared:model"))
     implementation(project(":core:network"))
 
     implementation(libs.hilt.android)

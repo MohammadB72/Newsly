@@ -22,5 +22,7 @@ dependencies {
     implementation(project(":core:designsystem"))
     implementation(project(":core:domain"))
 
+    implementation(project(":shared:resources"))
+
     implementation(libs.androidx.hilt.navigation.compose)
 }

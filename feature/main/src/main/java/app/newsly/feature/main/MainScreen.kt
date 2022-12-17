@@ -6,6 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import app.newsly.feature.main.navigation.NewslyNavHost
 import app.newsly.feature.main.navigation.TopLevelDestination
+import app.newsly.shared.resources.R
 
 @Composable
 fun MainRoute(

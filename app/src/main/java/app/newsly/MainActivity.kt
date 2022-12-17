@@ -8,7 +8,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import app.newsly.core.designsystem.theme.NewslyTheme
 import app.newsly.core.model.FailureAction
-import app.newsly.feature.main.R
+import app.newsly.shared.resources.R
 import app.newsly.ui.NewslyNavgraph
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
                             {
                                 val snackbarResult = snackbarHostState.showSnackbar(
                                     exception.message.toString(),
-                                    actionLabel = getString(R.string.app_name)
+                                    actionLabel = getString(R.string.retry)
                                 )
                                 if (snackbarResult == SnackbarResult.ActionPerformed) {
                                     exception.retryBlock()

@@ -15,7 +15,6 @@
             <option value="$PROJECT_DIR$/core/data" />
             <option value="$PROJECT_DIR$/core/designsystem" />
             <option value="$PROJECT_DIR$/core/domain" />
-            <option value="$PROJECT_DIR$/core/model" />
             <option value="$PROJECT_DIR$/core/network" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/apps" />
@@ -25,6 +24,7 @@
             <option value="$PROJECT_DIR$/feature/news" />
             <option value="$PROJECT_DIR$/feature/splash" />
             <option value="$PROJECT_DIR$/shared" />
+            <option value="$PROJECT_DIR$/shared/model" />
             <option value="$PROJECT_DIR$/shared/resources" />
           </set>
         </option>

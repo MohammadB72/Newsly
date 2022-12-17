@@ -12,7 +12,7 @@ dependencies {
 
     implementation(project(":core:network"))
     implementation(project(":core:data"))
-    implementation(project(":core:model"))
+    implementation(project(":shared:model"))
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)

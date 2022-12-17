@@ -14,18 +14,19 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Newsly"
 include(":app")
-include(":core")
-include(":core:network")
-include(":core:domain")
-include(":feature")
+
 include(":feature:splash")
 include(":feature:news")
 include(":feature:editorchoice")
 include(":feature:categories")
 include(":feature:apps")
-include(":core:designsystem")
 include(":feature:main")
+
+include(":core:network")
+include(":core:domain")
+include(":core:designsystem")
 include(":core:data")
-include(":core:model")
+
 include(":shared")
 include(":shared:resources")
+include(":shared:model")

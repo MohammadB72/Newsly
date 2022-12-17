@@ -3,7 +3,7 @@ package app.newsly.feature.main.navigation
 import app.newsly.core.designsystem.icon.Icon
 import app.newsly.core.designsystem.icon.Icon.ImageVectorIcon
 import app.newsly.core.designsystem.icon.NewslyIcons
-import app.newsly.feature.main.R
+import app.newsly.shared.resources.R
 
 
 enum class TopLevelDestination(

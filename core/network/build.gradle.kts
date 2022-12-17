@@ -10,7 +10,7 @@ android {
 
 
 dependencies {
-    implementation(project(":core:model"))
+    implementation(project(":shared:model"))
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.gsonConverter)
     implementation(libs.retrofit.kotlin.serialization)

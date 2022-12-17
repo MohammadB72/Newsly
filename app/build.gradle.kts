@@ -49,7 +49,9 @@ dependencies {
     implementation(project(":feature:main"))
     implementation(project(":feature:splash"))
     implementation(project(":core:designsystem"))
-    implementation(project(":core:model"))
+
+    implementation(project(":shared:model"))
+    implementation(project(":shared:resources"))
 
 
     implementation(libs.androidx.core.ktx)
