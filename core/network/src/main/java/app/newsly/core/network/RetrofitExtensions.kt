@@ -1,7 +1,7 @@
 package app.newsly.core.network
 
 import android.content.Context
-import app.newsly.core.model.ErrorBehaviour
+import app.newsly.core.model.FailureAction
 import app.newsly.core.model.RequestException
 import app.newsly.core.model.RequestResult
 import app.newsly.core.network.util.isNetworkConnected
@@ -37,7 +37,7 @@ suspend fun <T : Any> apiCall(
                 return RequestResult.Error(
                     RequestException(
                         message = message,
-                        errorBehaviour = ErrorBehaviour.SHOW_SNACK,
+                        actionAfterFailure = FailureAction.SHOW_SNACK,
                     )
                 )
             }
@@ -45,14 +45,14 @@ suspend fun <T : Any> apiCall(
         return RequestResult.Error(
             RequestException(
                 message = "No Internet Connection",
-                errorBehaviour = ErrorBehaviour.SHOW_SNACK
+                actionAfterFailure = FailureAction.SHOW_SNACK
             )
         )
     }
     return RequestResult.Error(
         RequestException(
             message = "Unknown exception from ApiCall",
-            errorBehaviour = ErrorBehaviour.SHOW_SNACK
+            actionAfterFailure = FailureAction.SHOW_SNACK
         )
     )
 }

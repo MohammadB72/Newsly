@@ -1,5 +1,6 @@
 package app.newsly.feature.splashscreen.navigation
 
+import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
@@ -15,9 +16,9 @@ fun NavController.navigateToSplash(navOptions: NavOptions? = null) {
 
 fun NavGraphBuilder.splashScreen(
     navigateToMain: () -> Unit,
-    onErrorDetected: (RequestException) -> Unit
+    onFailureOccured: @Composable (RequestException) -> Unit
 ) {
     composable(splashNavigationRoute) {
-        SplashRoute(navigateToMain = navigateToMain, onErrorDetected = onErrorDetected)
+        SplashRoute(navigateToMain = navigateToMain, onFailureOccured = onFailureOccured)
     }
 }

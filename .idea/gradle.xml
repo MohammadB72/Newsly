@@ -24,6 +24,8 @@
             <option value="$PROJECT_DIR$/feature/main" />
             <option value="$PROJECT_DIR$/feature/news" />
             <option value="$PROJECT_DIR$/feature/splash" />
+            <option value="$PROJECT_DIR$/shared" />
+            <option value="$PROJECT_DIR$/shared/resources" />
           </set>
         </option>
       </GradleProjectSettings>

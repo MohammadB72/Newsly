@@ -16,14 +16,14 @@ import app.newsly.core.model.RequestException
 internal fun SplashRoute(
     navigateToMain: () -> Unit,
     modifier: Modifier = Modifier,
-    onErrorDetected: (RequestException) -> Unit,
+    onFailureOccured: @Composable (RequestException) -> Unit,
     viewModel: SplashViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     SplashScreen(
         navigateToMain = navigateToMain,
         uiState = uiState,
-        onErrorDetected = onErrorDetected
+        onFailureOccured = onFailureOccured
     )
 }
 
@@ -31,14 +31,14 @@ internal fun SplashRoute(
 fun SplashScreen(
     navigateToMain: () -> Unit,
     uiState: SplashUiState,
-    onErrorDetected: (RequestException) -> Unit
+    onFailureOccured: @Composable (RequestException) -> Unit
 ) {
     Box(modifier = Modifier.fillMaxSize()) {
         Text(modifier = Modifier.fillMaxSize(), text = "Splash")
         if (uiState is SplashUiState.Success) {
             navigateToMain()
-        } else if (uiState is SplashUiState.Error) {
-            onErrorDetected(uiState.exception)
+        } else if (uiState is SplashUiState.Failure) {
+            onFailureOccured(uiState.exception)
         }
     }
 }

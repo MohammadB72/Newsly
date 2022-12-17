@@ -1,7 +1,7 @@
 package app.newsly.core.domain
 
 import app.newsly.core.model.RequestResult
-import app.newsly.core.model.doOnError
+import app.newsly.core.model.doOnFailure
 import app.newsly.core.model.doOnSuccess
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -12,7 +12,7 @@ abstract class BaseUseCase<P, R> {
             execute()
                 .doOnSuccess {
                     emit(RequestResult.Success(mapper(it)))
-                }.doOnError {
+                }.doOnFailure {
                     emit(RequestResult.Error(it))
                 }
         }

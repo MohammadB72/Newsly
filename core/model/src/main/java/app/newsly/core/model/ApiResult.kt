@@ -18,7 +18,7 @@ suspend fun <T> RequestResult<T>.doOnSuccess(action: suspend (T) -> Unit): Reque
     return this
 }
 
-suspend fun <T> RequestResult<T>.doOnError(action: suspend (RequestException) -> Unit) = apply {
+suspend fun <T> RequestResult<T>.doOnFailure(action: suspend (RequestException) -> Unit) = apply {
     if (this is RequestResult.Error) {
         action(this.exception)
     }

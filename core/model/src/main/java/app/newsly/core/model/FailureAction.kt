@@ -1,5 +1,5 @@
 package app.newsly.core.model
 
-enum class ErrorBehaviour {
+enum class FailureAction {
     NONE, SHOW_SNACK, SHOW_TOAST
 }
