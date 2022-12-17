@@ -1,8 +1,8 @@
 package app.newsly.core.network
 
-import app.newsly.core.model.ApiResult
+import app.newsly.core.model.RequestResult
 import app.newsly.core.model.network.ServerStatusNetworkModel
 
 interface RemoteDataSource {
-    suspend fun getServerStatus(): ApiResult<ServerStatusNetworkModel>
+    suspend fun getServerStatus(): RequestResult<ServerStatusNetworkModel>
 }

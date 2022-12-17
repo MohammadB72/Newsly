@@ -4,7 +4,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import app.newsly.core.model.ApiException
+import app.newsly.core.model.RequestException
 import app.newsly.feature.splashscreen.SplashRoute
 
 const val splashNavigationRoute = "splash_route"
@@ -15,7 +15,7 @@ fun NavController.navigateToSplash(navOptions: NavOptions? = null) {
 
 fun NavGraphBuilder.splashScreen(
     navigateToMain: () -> Unit,
-    onErrorDetected: (ApiException) -> Unit
+    onErrorDetected: (RequestException) -> Unit
 ) {
     composable(splashNavigationRoute) {
         SplashRoute(navigateToMain = navigateToMain, onErrorDetected = onErrorDetected)

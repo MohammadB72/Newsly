@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import app.newsly.core.model.ApiException
+import app.newsly.core.model.RequestException
 
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
@@ -16,7 +16,7 @@ import app.newsly.core.model.ApiException
 internal fun SplashRoute(
     navigateToMain: () -> Unit,
     modifier: Modifier = Modifier,
-    onErrorDetected: (ApiException) -> Unit,
+    onErrorDetected: (RequestException) -> Unit,
     viewModel: SplashViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -31,7 +31,7 @@ internal fun SplashRoute(
 fun SplashScreen(
     navigateToMain: () -> Unit,
     uiState: SplashUiState,
-    onErrorDetected: (ApiException) -> Unit
+    onErrorDetected: (RequestException) -> Unit
 ) {
     Box(modifier = Modifier.fillMaxSize()) {
         Text(modifier = Modifier.fillMaxSize(), text = "Splash")

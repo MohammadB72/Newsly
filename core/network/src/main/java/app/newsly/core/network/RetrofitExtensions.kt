@@ -1,20 +1,20 @@
 package app.newsly.core.network
 
 import android.content.Context
-import app.newsly.core.model.ApiException
-import app.newsly.core.model.ApiResult
 import app.newsly.core.model.ErrorBehaviour
+import app.newsly.core.model.RequestException
+import app.newsly.core.model.RequestResult
 import app.newsly.core.network.util.isNetworkConnected
 import retrofit2.HttpException
 
-suspend fun <T : Any> apiCallWithResult(
+suspend fun <T : Any> apiCall(
     context: Context,
-    apiCallBlock: suspend () -> T,
-): ApiResult<T> {
+    block: suspend () -> T,
+): RequestResult<T> {
     if (context.isNetworkConnected) {
-        runCatching { apiCallBlock() }
+        runCatching { block() }
             .onSuccess { value ->
-                return ApiResult.Success(value)
+                return RequestResult.Success(value)
             }.onFailure { exception ->
                 val message = when (exception) {
                     is HttpException -> {
@@ -34,23 +34,23 @@ suspend fun <T : Any> apiCallWithResult(
                         exception.message
                     }
                 }
-                return ApiResult.Error(
-                    ApiException(
+                return RequestResult.Error(
+                    RequestException(
                         message = message,
                         errorBehaviour = ErrorBehaviour.SHOW_SNACK,
                     )
                 )
             }
     } else {
-        return ApiResult.Error(
-            ApiException(
+        return RequestResult.Error(
+            RequestException(
                 message = "No Internet Connection",
                 errorBehaviour = ErrorBehaviour.SHOW_SNACK
             )
         )
     }
-    return ApiResult.Error(
-        ApiException(
+    return RequestResult.Error(
+        RequestException(
             message = "Unknown exception from ApiCall",
             errorBehaviour = ErrorBehaviour.SHOW_SNACK
         )

@@ -1,25 +1,25 @@
 package app.newsly.core.model
 
 
-sealed class ApiResult<out R> {
-    data class Success<out T>(val data: T) : ApiResult<T>()
+sealed class RequestResult<out R> {
+    data class Success<out T>(val data: T) : RequestResult<T>()
     data class Error(
-        val exception: ApiException
-    ) : ApiResult<Nothing>()
+        val exception: RequestException
+    ) : RequestResult<Nothing>()
 
-    object Loading : ApiResult<Nothing>()
+    object Loading : RequestResult<Nothing>()
 }
 
 
-suspend fun <T> ApiResult<T>.doOnSuccess(action: suspend (T) -> Unit): ApiResult<T> {
-    if (this is ApiResult.Success) {
+suspend fun <T> RequestResult<T>.doOnSuccess(action: suspend (T) -> Unit): RequestResult<T> {
+    if (this is RequestResult.Success) {
         action(this.data)
     }
     return this
 }
 
-suspend fun <T> ApiResult<T>.doOnError(action: suspend (ApiException) -> Unit) = apply {
-    if (this is ApiResult.Error) {
+suspend fun <T> RequestResult<T>.doOnError(action: suspend (RequestException) -> Unit) = apply {
+    if (this is RequestResult.Error) {
         action(this.exception)
     }
 }
