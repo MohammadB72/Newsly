@@ -16,9 +16,9 @@ fun NavController.navigateToSplash(navOptions: NavOptions? = null) {
 
 fun NavGraphBuilder.splashScreen(
     navigateToMain: () -> Unit,
-    onFailureOccured: @Composable (RequestException) -> Unit
+    onFailureOccurred: @Composable (RequestException) -> Unit
 ) {
     composable(splashNavigationRoute) {
-        SplashRoute(navigateToMain = navigateToMain, onFailureOccured = onFailureOccured)
+        SplashRoute(navigateToMain = navigateToMain, onFailureOccurred = onFailureOccurred)
     }
 }

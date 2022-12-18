@@ -11,5 +11,5 @@ data class ServerStatusNetworkModel(
     val title: String,
     val message: String,
 ) : BaseNetworkModel() {
-    override fun toDomainModel(): ServerStatus = ServerStatus(up = up)
+    override fun toDomainModel(): ServerStatus = ServerStatus(isUp = up)
 }

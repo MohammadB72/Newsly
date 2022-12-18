@@ -34,7 +34,7 @@ suspend fun <T : Any> apiCall(
                         exception.message
                     }
                 }
-                return RequestResult.Error(
+                return RequestResult.Fail(
                     RequestException(
                         message = message,
                         actionAfterFailure = FailureAction.SHOW_SNACK,
@@ -42,14 +42,14 @@ suspend fun <T : Any> apiCall(
                 )
             }
     } else {
-        return RequestResult.Error(
+        return RequestResult.Fail(
             RequestException(
                 message = "No Internet Connection",
                 actionAfterFailure = FailureAction.SHOW_SNACK
             )
         )
     }
-    return RequestResult.Error(
+    return RequestResult.Fail(
         RequestException(
             message = "Unknown exception from ApiCall",
             actionAfterFailure = FailureAction.SHOW_SNACK

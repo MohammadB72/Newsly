@@ -16,14 +16,14 @@ import app.newsly.core.model.RequestException
 internal fun SplashRoute(
     navigateToMain: () -> Unit,
     modifier: Modifier = Modifier,
-    onFailureOccured: @Composable (RequestException) -> Unit,
+    onFailureOccurred: @Composable (RequestException) -> Unit,
     viewModel: SplashViewModel = hiltViewModel()
 ) {
-    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val uiState by viewModel.state.collectAsStateWithLifecycle()
     SplashScreen(
         navigateToMain = navigateToMain,
         uiState = uiState,
-        onFailureOccured = onFailureOccured
+        onFailureOccurred = onFailureOccurred
     )
 }
 
@@ -31,14 +31,22 @@ internal fun SplashRoute(
 fun SplashScreen(
     navigateToMain: () -> Unit,
     uiState: SplashUiState,
-    onFailureOccured: @Composable (RequestException) -> Unit
+    onFailureOccurred: @Composable (RequestException) -> Unit
 ) {
     Box(modifier = Modifier.fillMaxSize()) {
-        Text(modifier = Modifier.fillMaxSize(), text = "Splash")
-        if (uiState is SplashUiState.Success) {
-            navigateToMain()
-        } else if (uiState is SplashUiState.Failure) {
-            onFailureOccured(uiState.exception)
+
+        when (uiState) {
+            SplashUiState.Loading -> {
+                Text(modifier = Modifier.fillMaxSize(), text = "Splash Loading")
+            }
+            is SplashUiState.Success -> {
+                navigateToMain()
+            }
+            is SplashUiState.Failure -> {
+                Text(modifier = Modifier.fillMaxSize(), text = "Splash Fail")
+                onFailureOccurred(uiState.exception)
+            }
+            else -> {}
         }
     }
 }

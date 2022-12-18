@@ -13,7 +13,7 @@ import app.newsly.feature.splashscreen.navigation.splashScreen
 
 
 @Composable
-fun NewslyNavgraph(onFailureOccured: @Composable (RequestException) -> Unit) {
+fun NewslyNavgraph(onFailureOccurred: @Composable (RequestException) -> Unit) {
     val navController = rememberNavController()
     NavHost(
         modifier = Modifier,
@@ -26,7 +26,7 @@ fun NewslyNavgraph(onFailureOccured: @Composable (RequestException) -> Unit) {
                     popUpTo(splashNavigationRoute) { inclusive = true }
                 })
             },
-            onFailureOccured = onFailureOccured
+            onFailureOccurred = onFailureOccurred
         )
         mainGraph()
     }

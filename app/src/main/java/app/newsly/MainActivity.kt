@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(snackbarHost = { SnackbarHost(hostState = snackbarHostState) })
                 { paddingValues ->
                     paddingValues
-                    NewslyNavgraph(onFailureOccured = { exception ->
+                    NewslyNavgraph(onFailureOccurred = { exception ->
                         if (exception.actionAfterFailure == FailureAction.SHOW_SNACK) {
                             LaunchedEffect(snackbarHostState)
                             {
