@@ -2,6 +2,8 @@ package app.newsly.core.network.di
 
 import android.content.Context
 import app.newsly.core.network.BuildConfig
+import app.newsly.core.network.di.qualifier.AuthenticatorRetrofit
+import app.newsly.core.network.di.qualifier.GeneralRetrofit
 import app.newsly.core.network.retrofit.ServerStatusApi
 import com.google.gson.Gson
 import dagger.Module
@@ -21,17 +23,30 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideApi(retrofit: Retrofit): ServerStatusApi =
+    fun provideApi(@GeneralRetrofit retrofit: Retrofit): ServerStatusApi =
         retrofit.create(ServerStatusApi::class.java)
 
     @Singleton
     @Provides
-    fun provideRetrofit(
+    @GeneralRetrofit
+    fun provideGeneralRetrofit(
         okHttpClient: OkHttpClient,
         gsonConverterFactory: GsonConverterFactory
     ): Retrofit = Retrofit.Builder()
         .addConverterFactory(gsonConverterFactory)
         .baseUrl("https://devopssolutions.ir/digiato/")
+        .client(okHttpClient)
+        .build()
+
+    @Singleton
+    @Provides
+    @AuthenticatorRetrofit
+    fun provideAuthenticatorRetrofit(
+        okHttpClient: OkHttpClient,
+        gsonConverterFactory: GsonConverterFactory
+    ): Retrofit = Retrofit.Builder()
+        .addConverterFactory(gsonConverterFactory)
+        .baseUrl("https://digiato.com/wp-json/digiato/")
         .client(okHttpClient)
         .build()
 

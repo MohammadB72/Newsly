@@ -1,14 +1,20 @@
 package app.newsly.feature.splashscreen
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.newsly.core.model.RequestException
+import app.newsly.shared.resources.R
 
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
@@ -33,20 +39,49 @@ fun SplashScreen(
     uiState: SplashUiState,
     onFailureOccurred: @Composable (RequestException) -> Unit
 ) {
-    Box(modifier = Modifier.fillMaxSize()) {
-
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .wrapContentSize(Alignment.Center),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            modifier = Modifier.padding(bottom = 16.dp),
+            text = stringResource(id = R.string.app_name),
+            style = MaterialTheme.typography.displaySmall
+        )
         when (uiState) {
             SplashUiState.Loading -> {
-                Text(modifier = Modifier.fillMaxSize(), text = "Splash Loading")
+                LoadingContent()
             }
             is SplashUiState.Success -> {
                 navigateToMain()
             }
             is SplashUiState.Failure -> {
-                Text(modifier = Modifier.fillMaxSize(), text = "Splash Fail")
-                onFailureOccurred(uiState.exception)
+                FailureContent(
+                    exception = uiState.exception,
+                    onFailureOccurred = onFailureOccurred
+                )
             }
-            else -> {}
+        }
+    }
+}
+
+@Composable
+fun LoadingContent() {
+    CircularProgressIndicator()
+}
+
+@Composable
+fun FailureContent(
+    exception: RequestException,
+    onFailureOccurred: @Composable (RequestException) -> Unit
+) {
+    Box {
+        onFailureOccurred(exception)
+        Button(onClick = { exception.retryBlock() }) {
+            Text(text = stringResource(id = R.string.retry))
         }
     }
 }

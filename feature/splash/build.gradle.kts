@@ -18,6 +18,7 @@ dependencies {
     implementation(project(":core:designsystem"))
     implementation(project(":core:domain"))
     implementation(project(":shared:model"))
+    implementation(project(":shared:resources"))
 
     implementation(libs.androidx.lifecycle.runtimeCompose)
 

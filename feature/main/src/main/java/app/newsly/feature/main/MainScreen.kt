@@ -53,7 +53,12 @@ private fun BottomBar(
                 icon = {
                     if (selected) destination.selectedIcon.ToIcon() else destination.unselectedIcon.ToIcon()
                 },
-                label = { Text(text = stringResource(id = destination.titleTextId)) },
+                label = {
+                    Text(
+                        text = stringResource(id = destination.titleTextId),
+                        style = MaterialTheme.typography.labelSmall
+                    )
+                },
             )
         }
     }

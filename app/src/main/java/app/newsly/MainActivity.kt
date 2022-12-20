@@ -3,9 +3,11 @@ package app.newsly
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.*
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
+import androidx.core.view.WindowCompat
 import app.newsly.core.designsystem.theme.NewslyTheme
 import app.newsly.core.model.FailureAction
 import app.newsly.shared.resources.R
@@ -18,9 +20,11 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
         setContent {
             NewslyTheme(
-                darkTheme = false
+                darkTheme = isSystemInDarkTheme()
             ) {
                 val snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
 
@@ -29,7 +33,7 @@ class MainActivity : ComponentActivity() {
                     paddingValues
                     NewslyNavgraph(onFailureOccurred = { exception ->
                         if (exception.actionAfterFailure == FailureAction.SHOW_SNACK) {
-                            LaunchedEffect(snackbarHostState)
+                            LaunchedEffect(snackbarHostState, exception.id)
                             {
                                 val snackbarResult = snackbarHostState.showSnackbar(
                                     exception.message.toString(),
@@ -39,7 +43,6 @@ class MainActivity : ComponentActivity() {
                                     exception.retryBlock()
                                 }
                             }
-
                         }
                     })
                 }
