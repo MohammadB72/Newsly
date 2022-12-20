@@ -23,12 +23,35 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("debug") {
+            versionNameSuffix = "-debug"
+        }
+
+        getByName("release") {
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+    }
+
+    flavorDimensions += "version"
+    productFlavors {
+        create("mock") {
+            dimension = "version"
+            versionNameSuffix = "-mock"
+            applicationIdSuffix = ".dev"
+        }
+        create("development") {
+            dimension = "version"
+            versionNameSuffix = "-dev"
+            applicationIdSuffix = ".dev"
+        }
+        create("production") {
+            dimension = "version"
+            versionNameSuffix = ""
+            applicationIdSuffix = ""
         }
     }
 
@@ -51,7 +74,9 @@ dependencies {
     implementation(project(":core:designsystem"))
 
     implementation(project(":shared:model"))
+
     implementation(project(":shared:resources"))
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

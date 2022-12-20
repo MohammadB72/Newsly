@@ -6,6 +6,18 @@ plugins {
 
 android {
     namespace = "app.newsly.core.domain"
+    flavorDimensions += "version"
+    productFlavors {
+        create("mock") {
+            dimension = "version"
+        }
+        create("development") {
+            dimension = "version"
+        }
+        create("production") {
+            dimension = "version"
+        }
+    }
 }
 
 dependencies {

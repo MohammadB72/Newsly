@@ -1,5 +1,6 @@
 package app.newsly.feature.splashscreen
 
+import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
@@ -13,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import app.newsly.ApiConfig
 import app.newsly.core.model.RequestException
 import app.newsly.shared.resources.R
 
@@ -39,6 +41,7 @@ fun SplashScreen(
     uiState: SplashUiState,
     onFailureOccurred: @Composable (RequestException) -> Unit
 ) {
+    Log.w("thisisTahsle", ApiConfig.BASE_URL)
     Column(
         modifier = Modifier
             .fillMaxSize()
