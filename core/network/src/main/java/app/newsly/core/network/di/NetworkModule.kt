@@ -1,10 +1,10 @@
 package app.newsly.core.network.di
 
 import android.content.Context
-import app.newsly.core.network.BuildConfig
-import app.newsly.core.network.di.qualifier.AuthenticatorRetrofit
-import app.newsly.core.network.di.qualifier.GeneralRetrofit
+import app.newsly.ApiConfig
+import app.newsly.core.network.model.EmptyResponseConvertor
 import app.newsly.core.network.retrofit.ServerStatusApi
+import app.newsly.setEnvironment
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -12,7 +12,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -23,45 +22,30 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideApi(@GeneralRetrofit retrofit: Retrofit): ServerStatusApi =
+    fun provideApi(retrofit: Retrofit): ServerStatusApi =
         retrofit.create(ServerStatusApi::class.java)
 
     @Singleton
     @Provides
-    @GeneralRetrofit
     fun provideGeneralRetrofit(
         okHttpClient: OkHttpClient,
+        emptyResponseConvertor: EmptyResponseConvertor,
         gsonConverterFactory: GsonConverterFactory
-    ): Retrofit = Retrofit.Builder()
-        .addConverterFactory(gsonConverterFactory)
-        .baseUrl("https://devopssolutions.ir/digiato/")
-        .client(okHttpClient)
-        .build()
-
-    @Singleton
-    @Provides
-    @AuthenticatorRetrofit
-    fun provideAuthenticatorRetrofit(
-        okHttpClient: OkHttpClient,
-        gsonConverterFactory: GsonConverterFactory
-    ): Retrofit = Retrofit.Builder()
-        .addConverterFactory(gsonConverterFactory)
-        .baseUrl("https://digiato.com/wp-json/digiato/")
-        .client(okHttpClient)
-        .build()
+    ): Retrofit {
+        return Retrofit.Builder()
+            .addConverterFactory(gsonConverterFactory)
+            .addConverterFactory(emptyResponseConvertor)
+            .baseUrl(ApiConfig.BASE_URL)
+            .client(okHttpClient)
+            .build()
+    }
 
 
     @Provides
     fun provideOkHttpClient(
         @ApplicationContext context: Context,
     ): OkHttpClient {
-        return OkHttpClient.Builder()
-            .apply {
-                if (BuildConfig.DEBUG) {
-                    addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
-                }
-            }
-            .build()
+        return OkHttpClient.Builder().setEnvironment(context).build()
     }
 
     @Singleton

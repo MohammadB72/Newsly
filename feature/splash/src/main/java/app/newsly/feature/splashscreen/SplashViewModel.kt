@@ -16,8 +16,8 @@ class SplashViewModel @Inject constructor(
     private val getServerStatusUseCase: GetServerStatusUseCase,
 ) : ViewModel() {
 
-    private val _state = MutableStateFlow<SplashUiState>(SplashUiState.Loading)
-    val state = _state.asStateFlow()
+    private val _splashUiState = MutableStateFlow<SplashUiState>(SplashUiState.Loading)
+    val splashUiState = _splashUiState.asStateFlow()
 
     init {
         getServerStatus()
@@ -27,17 +27,18 @@ class SplashViewModel @Inject constructor(
         viewModelScope.launch {
             getServerStatusUseCase.invoke()
                 .collect { result ->
-                    _state.value = when (result) {
-                        is RequestResult.Loading -> {
-                            SplashUiState.Loading
+                    _splashUiState.value =
+                        when (result) {
+                            is RequestResult.Loading -> {
+                                SplashUiState.Loading
+                            }
+                            is RequestResult.Success -> {
+                                SplashUiState.ServerStatusIsUp
+                            }
+                            is RequestResult.Fail -> {
+                                SplashUiState.Failure(result.exception.copy(retryBlock = { getServerStatus() }))
+                            }
                         }
-                        is RequestResult.Success -> {
-                            SplashUiState.Success(isUp = result.data.isUp)
-                        }
-                        is RequestResult.Fail -> {
-                            SplashUiState.Failure(result.exception.copy(retryBlock = { getServerStatus() }))
-                        }
-                    }
                 }
         }
     }

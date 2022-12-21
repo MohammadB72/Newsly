@@ -6,6 +6,8 @@
     <string name="editor_choice">Editor Choice</string>
     <string name="categories">Categories</string>
     <string name="apps">Apps</string>
-
     <string name="retry">Retry</string>
+    <string name="network_unknown_error">Network unknown error</string>
+    <string name="not_connected">⚠️ You aren’t connected to the internet</string>
+
 </resources>

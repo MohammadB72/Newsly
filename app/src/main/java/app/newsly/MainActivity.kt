@@ -32,15 +32,17 @@ class MainActivity : ComponentActivity() {
                 { paddingValues ->
                     paddingValues
                     NewslyNavgraph(onFailureOccurred = { exception ->
-                        if (exception.actionAfterFailure == FailureAction.SHOW_SNACK) {
+                        if (true) {
                             LaunchedEffect(snackbarHostState, exception.id)
                             {
-                                val snackbarResult = snackbarHostState.showSnackbar(
-                                    exception.message.toString(),
-                                    actionLabel = getString(R.string.retry)
-                                )
-                                if (snackbarResult == SnackbarResult.ActionPerformed) {
-                                    exception.retryBlock()
+                                if (exception.actionAfterFailure == FailureAction.NONE) {
+                                    val snackbarResult = snackbarHostState.showSnackbar(
+                                        exception.networkError?.message.toString(),
+                                        actionLabel = getString(R.string.retry)
+                                    )
+                                    if (snackbarResult == SnackbarResult.ActionPerformed) {
+                                        exception.retryBlock()
+                                    }
                                 }
                             }
                         }

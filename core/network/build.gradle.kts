@@ -23,6 +23,8 @@ android {
 
 dependencies {
     implementation(project(":shared:model"))
+    implementation(project(":shared:resources"))
+
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.gsonConverter)
     implementation(libs.retrofit.kotlin.serialization)
