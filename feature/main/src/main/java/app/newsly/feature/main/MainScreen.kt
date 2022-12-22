@@ -1,31 +1,61 @@
 package app.newsly.feature.main
 
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.*
 import androidx.compose.material3.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import app.newsly.feature.main.navigation.NewslyNavHost
 import app.newsly.feature.main.navigation.TopLevelDestination
 import app.newsly.shared.resources.R
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterialApi::class)
 @Composable
 fun MainRoute(
     mainScreenState: MainScreenState = rememberMainScreenState()
 ) {
-    MainScreen(
-        mainScreenState = mainScreenState
+    val sheetState = rememberModalBottomSheetState(
+        initialValue = ModalBottomSheetValue.Hidden,
+        confirmStateChange = { it != ModalBottomSheetValue.HalfExpanded }
     )
+    val coroutineScope = rememberCoroutineScope()
+
+    ModalBottomSheetLayout(
+        sheetState = sheetState,
+        sheetContent = { BottomSheet() },
+        modifier = Modifier.fillMaxSize()
+    ) {
+        MainScreen(
+            mainScreenState = mainScreenState,
+            sheetState = sheetState,
+            coroutineScope = coroutineScope
+        )
+    }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterialApi::class)
 @Composable
 fun MainScreen(
-    mainScreenState: MainScreenState
+    mainScreenState: MainScreenState,
+    sheetState: ModalBottomSheetState,
+    coroutineScope: CoroutineScope
 ) {
     Scaffold(
         modifier = Modifier,
-        topBar = { TopAppBar() },
+        topBar = {
+            TopAppBar(
+                sheetState = sheetState,
+                coroutineScope = coroutineScope
+            )
+        },
         bottomBar = {
             BottomBar(
                 destinations = mainScreenState.topLevelDestinations,
@@ -69,10 +99,12 @@ private fun BottomBar(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterialApi::class)
 @Composable
 private fun TopAppBar(
     modifier: Modifier = Modifier,
+    sheetState: ModalBottomSheetState,
+    coroutineScope: CoroutineScope,
     topAppBarState: TopAppBarState = rememberTopAppBarState(),
     scrollBehavior: TopAppBarScrollBehavior? = TopAppBarDefaults.enterAlwaysScrollBehavior(
         topAppBarState
@@ -81,9 +113,33 @@ private fun TopAppBar(
     val title = stringResource(id = R.string.app_name)
     CenterAlignedTopAppBar(
         title = {
-            Text(text = title)
+            Text(
+                text = title,
+                modifier = Modifier.clickable {
+                    coroutineScope.launch {
+                        if (sheetState.isVisible) sheetState.hide()
+                        else sheetState.show()
+                    }
+                })
         },
         scrollBehavior = scrollBehavior,
         modifier = modifier
     )
+}
+
+@Composable
+fun BottomSheet() {
+    Column(
+        modifier = Modifier.padding(32.dp)
+    ) {
+        Text(
+            text = "Bottom sheet",
+            style = MaterialTheme.typography.headlineSmall
+        )
+        Spacer(modifier = Modifier.height(32.dp))
+        Text(
+            text = "Click outside the bottom sheet to hide it",
+            style = MaterialTheme.typography.bodyMedium
+        )
+    }
 }

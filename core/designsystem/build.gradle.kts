@@ -33,6 +33,7 @@ dependencies {
 
     api(platform(libs.androidx.compose.bom))
     api(libs.androidx.compose.ui.ui)
+    api(libs.androidx.compose.ui.util)
     api(libs.androidx.compose.ui.tooling)
     api(libs.androidx.compose.ui.tooling.preview)
     api(libs.androidx.compose.ui.test.manifest)
