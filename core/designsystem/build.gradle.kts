@@ -40,4 +40,7 @@ dependencies {
     api(libs.androidx.compose.material3)
     api(libs.google.android.material)
     api(libs.androidx.compose.material.iconsExtended)
+
+    api(libs.coil)
+    api(libs.coil.compose)
 }

@@ -12,7 +12,7 @@ import app.newsly.core.designsystem.R
 
 private val Montserrat = FontFamily(
     Font(R.font.montserrat_regular),
-    Font(R.font.montserrat_medium, FontWeight.W500)
+    Font(R.font.montserrat_medium, FontWeight.Medium)
 )
 
 @Suppress("DEPRECATION")

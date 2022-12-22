@@ -25,10 +25,6 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-
-        buildConfigField("String", "MOCK", MockFlavor.name)
-        buildConfigField("String", "DEVELOPMENT", DevelopmentFlavor.name)
-        buildConfigField("String", "PRODUCTION", ProductionFlavor.name)
     }
 
     buildTypes {

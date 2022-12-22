@@ -16,8 +16,8 @@ suspend fun <T> apiCall(
 ): RequestResult<T> {
     if (context.isNetworkConnected) {
         runCatching {
-            if (BuildConfig.FLAVOR.equals(BuildConfig.FLAVOR, ignoreCase = true)) {
-                delay(2000)
+            if (BuildConfig.FLAVOR.equals("mock", ignoreCase = true)) {
+                delay(1000)
             }
             block()
         }.onSuccess { value ->
