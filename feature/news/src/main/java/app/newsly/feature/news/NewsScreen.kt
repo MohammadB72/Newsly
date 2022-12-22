@@ -1,28 +1,50 @@
 package app.newsly.feature.news
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.style.TextAlign
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import app.newsly.core.designsystem.component.PostCardSimple
+import app.newsly.core.model.domain.News
 
+@OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
-internal fun NewsRoute() {
-    NewsScreen()
+internal fun NewsRoute(
+    viewModel: NewsViewModel = hiltViewModel()
+) {
+    val uiState by viewModel.newsUiState.collectAsStateWithLifecycle()
+    NewsScreen(uiState = uiState)
 }
 
 @Composable
-fun NewsScreen() {
-    Box(modifier = Modifier.fillMaxSize()) {
-        Text(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(Color.Red),
-            text = "News",
-            textAlign = TextAlign.Center
-        )
+fun NewsScreen(
+    uiState: NewsUiState
+) {
+    when (uiState) {
+        NewsUiState.Loading -> {}
+        is NewsUiState.HasNews -> {
+            PostList(posts = uiState.news)
+        }
+        is NewsUiState.Failure -> {}
+    }
+}
+
+@Composable
+fun PostList(
+    posts: List<News>,
+    modifier: Modifier = Modifier,
+) {
+    LazyColumn(
+        modifier = modifier,
+        state = rememberLazyListState()
+    ) {
+        items(items = posts, key = { post -> post.id }) { post ->
+            PostCardSimple(post = post)
+        }
     }
 }

@@ -2,7 +2,7 @@ package app.newsly.core.data.repository
 
 import app.newsly.core.model.RequestResult
 import app.newsly.core.model.network.EmptyResponseNetworkModel
-import app.newsly.core.network.RemoteDataSource
+import app.newsly.core.network.datasource.server.RemoteDataSource
 import javax.inject.Inject
 
 class ServerStatusRepositoryImp @Inject constructor(

@@ -2,10 +2,10 @@ package app.newsly.core.network.di
 
 import android.content.Context
 import app.newsly.ApiConfig
+import app.newsly.core.network.datasource.news.NewsApi
+import app.newsly.core.network.datasource.server.ServerStatusApi
 import app.newsly.core.network.model.EmptyResponseConvertor
-import app.newsly.core.network.retrofit.ServerStatusApi
 import app.newsly.setEnvironment
-import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,6 +24,11 @@ object NetworkModule {
     @Provides
     fun provideApi(retrofit: Retrofit): ServerStatusApi =
         retrofit.create(ServerStatusApi::class.java)
+
+    @Singleton
+    @Provides
+    fun provideNewsApi(retrofit: Retrofit): NewsApi =
+        retrofit.create(NewsApi::class.java)
 
     @Singleton
     @Provides
@@ -47,10 +52,6 @@ object NetworkModule {
     ): OkHttpClient {
         return OkHttpClient.Builder().setEnvironment(context).build()
     }
-
-    @Singleton
-    @Provides
-    fun provideGson(): Gson = Gson()
 
     @Singleton
     @Provides

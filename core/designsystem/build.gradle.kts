@@ -27,6 +27,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":shared:model"))
+
     api(platform(libs.androidx.compose.bom))
     api(libs.androidx.compose.ui.ui)
     api(libs.androidx.compose.ui.tooling)

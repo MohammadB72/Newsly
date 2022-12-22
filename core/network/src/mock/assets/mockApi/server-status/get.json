@@ -1,6 +1,6 @@
 {
-  "httpStatusCode": 500,
-  "status": "FAIL",
+  "httpStatusCode": 200,
+  "status": "SUCCESS",
   "error": {
     "key": "serverIsDown",
     "message": "Your server is down"

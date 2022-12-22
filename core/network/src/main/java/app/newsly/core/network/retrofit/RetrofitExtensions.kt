@@ -1,23 +1,16 @@
-package app.newsly.core.network
+package app.newsly.core.network.retrofit
 
 import android.content.Context
-import app.newsly.core.model.InAppError
-import app.newsly.core.model.NetworkError
-import app.newsly.core.model.RequestException
-import app.newsly.core.model.RequestResult
+import app.newsly.core.model.*
 import app.newsly.core.network.util.isNetworkConnected
+import app.newsly.shared.resources.BuildConfig
 import app.newsly.shared.resources.R
 import com.google.gson.Gson
 import kotlinx.coroutines.delay
 import retrofit2.HttpException
 
-private data class NetworkResponse<T>(
-    val status: String,
-    val data: T,
-    val error: NetworkError
-)
 
-suspend fun <T : Any> apiCall(
+suspend fun <T> apiCall(
     context: Context,
     block: suspend () -> T,
 ): RequestResult<T> {

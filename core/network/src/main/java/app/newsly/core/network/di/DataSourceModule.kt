@@ -1,8 +1,10 @@
 package app.newsly.core.network.di
 
 
-import app.newsly.core.network.RemoteDataSource
-import app.newsly.core.network.RemoteDataSourceImp
+import app.newsly.core.network.datasource.news.NewsRemoteDataSource
+import app.newsly.core.network.datasource.news.NewsRemoteDataSourceImp
+import app.newsly.core.network.datasource.server.RemoteDataSource
+import app.newsly.core.network.datasource.server.RemoteDataSourceImp
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -12,5 +14,8 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 abstract class DataSourceModule {
     @Binds
-    abstract fun bind(source: RemoteDataSourceImp): RemoteDataSource
+    abstract fun bindRemoteDataSource(source: RemoteDataSourceImp): RemoteDataSource
+
+    @Binds
+    abstract fun bindNewsRemoteDataSource(source: NewsRemoteDataSourceImp): NewsRemoteDataSource
 }

@@ -1,5 +1,6 @@
 package app.newsly.feature.main
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -33,8 +34,12 @@ fun MainScreen(
             )
         }
     ) { padding ->
-        padding
-        NewslyNavHost(navController = mainScreenState.navController)
+        val contentModifier = Modifier
+            .padding(padding)
+        NewslyNavHost(
+            modifier = contentModifier,
+            navController = mainScreenState.navController
+        )
     }
 }
 
