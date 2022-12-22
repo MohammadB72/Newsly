@@ -16,16 +16,15 @@ suspend fun <T> apiCall(
 ): RequestResult<T> {
     if (context.isNetworkConnected) {
         runCatching {
-            if (BuildConfig.FLAVOR.equals("mock", ignoreCase = true)) {
+            if (BuildConfig.FLAVOR.equals(BuildConfig.FLAVOR, ignoreCase = true)) {
                 delay(2000)
             }
             block()
+        }.onSuccess { value ->
+            return RequestResult.Success(value)
+        }.onFailure { exception ->
+            return RequestResult.Fail(RequestException(networkError = exception.toNetworkError()))
         }
-            .onSuccess { value ->
-                return RequestResult.Success(value)
-            }.onFailure { exception ->
-                return RequestResult.Fail(RequestException(networkError = exception.toNetworkError()))
-            }
     } else {
         return RequestResult.Fail(RequestException(inAppError = InAppError(resMessage = R.string.not_connected)))
     }

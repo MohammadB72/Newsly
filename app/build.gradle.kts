@@ -1,3 +1,8 @@
+import flavor.DevelopmentFlavor
+import flavor.MockFlavor
+import flavor.ProductionFlavor
+import flavor.dimension.FlavorDimension
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -20,6 +25,10 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        buildConfigField("String", "MOCK", MockFlavor.name)
+        buildConfigField("String", "DEVELOPMENT", DevelopmentFlavor.name)
+        buildConfigField("String", "PRODUCTION", ProductionFlavor.name)
     }
 
     buildTypes {
@@ -36,22 +45,22 @@ android {
         }
     }
 
-    flavorDimensions += "version"
+    flavorDimensions += FlavorDimension.MODE.value
     productFlavors {
-        create("mock") {
-            dimension = "version"
-            versionNameSuffix = "-mock"
-            applicationIdSuffix = ".dev"
+        create(MockFlavor.name) {
+            dimension = FlavorDimension.MODE.value
+            versionNameSuffix = MockFlavor.versionNameSuffix
+            applicationIdSuffix = MockFlavor.applicationIdSuffix
         }
-        create("development") {
-            dimension = "version"
-            versionNameSuffix = "-dev"
-            applicationIdSuffix = ".dev"
+        create(DevelopmentFlavor.name) {
+            dimension = FlavorDimension.MODE.value
+            versionNameSuffix = DevelopmentFlavor.versionNameSuffix
+            applicationIdSuffix = DevelopmentFlavor.applicationIdSuffix
         }
-        create("production") {
-            dimension = "version"
-            versionNameSuffix = ""
-            applicationIdSuffix = ""
+        create(ProductionFlavor.name) {
+            dimension = FlavorDimension.MODE.value
+            versionNameSuffix = ProductionFlavor.versionNameSuffix
+            applicationIdSuffix = ProductionFlavor.applicationIdSuffix
         }
     }
 
@@ -71,10 +80,10 @@ android {
 dependencies {
     implementation(project(":feature:main"))
     implementation(project(":feature:splash"))
+
     implementation(project(":core:designsystem"))
 
     implementation(project(":shared:model"))
-
     implementation(project(":shared:resources"))
 
 

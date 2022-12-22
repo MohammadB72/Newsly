@@ -5,18 +5,20 @@ plugins {
 
 android {
     namespace = "app.newsly.feature.main"
-    flavorDimensions += "version"
+
+    flavorDimensions += flavor.dimension.FlavorDimension.MODE.value
     productFlavors {
-        create("mock") {
-            dimension = "version"
+        create(flavor.MockFlavor.name) {
+            dimension = flavor.dimension.FlavorDimension.MODE.value
         }
-        create("development") {
-            dimension = "version"
+        create(flavor.DevelopmentFlavor.name) {
+            dimension = flavor.dimension.FlavorDimension.MODE.value
         }
-        create("production") {
-            dimension = "version"
+        create(flavor.ProductionFlavor.name) {
+            dimension = flavor.dimension.FlavorDimension.MODE.value
         }
     }
+
     buildFeatures {
         compose = true
     }
