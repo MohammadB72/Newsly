@@ -3,94 +3,114 @@
   "status": "SUCCESS",
   "data": [
     {
-      "id": 1541625,
-      "title": "Twitter Blue users can now upload 60-minute long videos",
-      "image": "https://techcrunch.com/wp-content/uploads/2022/11/twitter-blue-breaking.jpg?w=430&h=230&crop=1",
-      "date": "2022-12-23T11:08:10",
-      "author": "Ivan Mehta",
-      "author_avatar": "https://digiato.com/wp-content/uploads/avatars/277017-142x142.jpg",
-      "link": ""
+      "id": 1542045,
+      "title": "NASA Image of the Day: Cassini among Saturn and its rings",
+      "image": "https://digiato.com/wp-content/uploads/2022/12/SaturnInsideOut2_cassini_960.jpg",
+      "date": "2022-12-23T03:08:10",
+      "author": {
+        "name": "Mahdis Nasiri",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/278891-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/cassini-looks-out-from-saturn-apod"
     },
     {
-      "id": 1541634,
-      "title": "A brief history of diffusion, the tech at the heart of modern image-generating AI",
-      "image": "https://techcrunch.com/wp-content/uploads/2022/08/ai-gen-unfiltered.jpg?w=430&h=230&crop=1",
+      "id": 1542048,
+      "title": "Twitter Blue users can now upload 60-minute videos",
+      "image": "https://digiato.com/wp-content/uploads/2022/12/Twitter-Blue-2-910x600.jpg",
       "date": "2022-12-23T02:30:19",
-      "author": "Mahdis",
-      "author_avatar": "https://digiato.com/wp-content/uploads/avatars/278891-142x142.jpg",
-      "link": ""
+      "author": {
+        "name": "Mohammad Qureshi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/210361-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/twitter-blue-users-can-now-upload-60-minute-long-videos"
     },
     {
-      "id": 1541602,
-      "title": "LastPass says hackers stole customers’ password vaults",
-      "image": "https://techcrunch.com/wp-content/uploads/2022/11/lastpass-password-manager.jpg?w=1390&crop=1",
+      "id": 1541959,
+      "title": "Google will add a new testing layer to Chrome updates next year",
+      "image": "https://digiato.com/wp-content/uploads/2022/12/Chrome-1-910x600.jpg",
       "date": "2022-12-22T21:30:09",
-      "author": "Zack Whittake",
-      "author_avatar": "https://techcrunch.com/wp-content/uploads/2022/10/zw-profile.jpg?w=200&h=200&crop=1",
-      "link": ""
+      "author": {
+        "name": "Yunes Moradi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/57105-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/google-chrome-testing-release-update-early-stable"
     },
     {
-      "id": 1541556,
-      "title": "Google combines Maps and Waze teams as pressures mount to cut costs",
-      "image": "https://techcrunch.com/wp-content/uploads/2022/08/GettyImages-1235613908.jpg?w=430&h=230&crop=1",
+      "id": 1541978,
+      "title": "Apple found to be infringing on AliveCor's patents",
+      "image": "https://digiato.com/wp-content/uploads/2022/12/Apple-Watch-ECG-910x600.jpg",
       "date": "2022-12-12T21:30:10",
-      "author": "Sami",
-      "author_avatar": "https://peivast.com/wp-content/uploads/SAMIE-e1656403784783.jpg",
-      "link": ""
+      "author": {
+        "name": "Nafiseh Shahbazi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/218286-142x142.jpeg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/itc-apple-watch-infringed-alivecors-ecg-patent"
     },
     {
-      "id": 1541555,
-      "title": "Twitter now shows how many people view your tweets",
-      "image": "https://techcrunch.com/wp-content/uploads/2022/10/twitter-bird-in-cage-3.jpg?w=430&h=230&crop=1",
+      "id": 1541967,
+      "title": "Disclosing the roadmap of pixel products",
+      "image": "https://digiato.com/wp-content/uploads/2022/12/Google-Pixel-Phone-910x600.jpg",
       "date": "2022-12-12T21:30:10",
-      "author": "Amanda Silberling",
-      "author_avatar": "",
-      "link": ""
+      "author": {
+        "name": "Saba Selouki",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/277017-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/google-pixel-roadmap-leaked-2025"
     },
     {
-      "id": 1541554,
-      "title": "VFX studio Perception takes us inside the tech of ‘Black Panther: Wakanda Forever’",
-      "image": "https://techcrunch.com/wp-content/uploads/2022/12/8sMmAmN2x7mBiNKEX2o0aOTozEB.jpg?w=430&h=230&crop=1",
+      "id": 1541751,
+      "title": "Chery electric flagship is introduced",
+      "image": "https://digiato.com/wp-content/uploads/2022/12/Chery-eQ7-Teaser-1_result_1-910x600.jpg",
       "date": "2022-12-12T21:30:10",
-      "author": "Lauren Forristal",
-      "author_avatar": "",
-      "link": ""
+      "author": {
+        "name": "Saeed Alipour",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/32122-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/chery-is-working-on-eq7"
     },
     {
-      "id": 1541553,
-      "title": "Okta confirms another breach after hackers steal source code",
-      "image": "https://techcrunch.com/wp-content/uploads/2022/12/GettyImages-1356496030.jpg?w=430&h=230&crop=1",
+      "id": 1541955,
+      "title": "Continued retrenchment on Twitter",
+      "image": "https://digiato.com/wp-content/uploads/2022/12/Twitter-Exit-910x600.jpg",
       "date": "2022-12-12T21:30:10",
-      "author": "Carly Page",
-      "author_avatar": "https://techcrunch.com/wp-content/uploads/2021/08/Headshot-BW.png?w=200&h=200&crop=1",
-      "link": ""
+      "author": {
+        "name": "Javad Taji",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/224206-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/twitter-lays-off-employees-in-public-policy"
     },
     {
-      "id": 1541552,
-      "title": "Investor interest in SpaceX appears immune to Musk’s meddling",
-      "image": "https://techcrunch.com/wp-content/uploads/2022/12/GettyImages-1323284095.jpg?w=430&h=230&crop=1",
+      "id": 1541948,
+      "title": "LastPass: Hackers have stolen users' encrypted data",
+      "image": "https://digiato.com/wp-content/uploads/2022/12/LastPass-910x600.jpg",
       "date": "2022-12-12T21:30:10",
-      "author": "Rebecca Szkutak",
-      "author_avatar": "",
-      "link": ""
+      "author": {
+        "name": "Mohammad Qureshi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/210361-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/lastpass-customer-password-vaults-stolen"
     },
     {
-      "id": 1541551,
-      "title": "Dear Sophie: What are the pros and cons of the E-2 and L-1A visas?",
-      "image": "https://techcrunch.com/wp-content/uploads/2021/01/dear-sophie-immigration-maze-3.jpg?w=430&h=230&crop=1",
+      "id": 1541900,
+      "title": "Introducing the best Android browsers",
+      "image": "https://digiato.com/wp-content/uploads/2022/12/0-9-910x600.jpg",
       "date": "2022-12-12T21:30:10",
-      "author": "Sophie Alcorn",
-      "author_avatar": "",
-      "link": ""
+      "author": {
+        "name": "Amir Hosseini",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/20493-142x142.jpg"
+      },
+      "link": "https://digiato.com/daily-timeline/page/2?skip=1542048"
     },
     {
-      "id": 1541550,
-      "title": "As expats fled China’s zero-COVID, this developer built a sci-fi game for NetEase",
-      "image": "https://techcrunch.com/wp-content/uploads/2022/12/First-discover-base-camp.jpg?w=430&h=230&crop=1",
+      "id": 1541847,
+      "title": "Bill Gates: Elon Musk makes random decisions on Twitter",
+      "image": "https://digiato.com/wp-content/uploads/2022/12/Bill-Gates-Elon-Musk-910x600.jpg",
       "date": "2022-12-12T21:30:10",
-      "author": "Rita Liao",
-      "author_avatar": "",
-      "link": ""
+      "author": {
+        "name": "Zahra Maleki",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/52643-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/22/bill-gates-elon-musk-twitter-leadership-digital"
     }
   ]
 }

@@ -1,3 +1,5 @@
 package app.newsly.core.model.domain
 
-open class BaseDomainModel
+abstract class BaseDomainModel {
+    abstract val hasValidData: Boolean
+}

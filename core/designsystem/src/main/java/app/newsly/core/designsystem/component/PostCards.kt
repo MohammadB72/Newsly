@@ -45,7 +45,7 @@ fun PostTitle(
     Text(
         text = title,
         style = MaterialTheme.typography.titleMedium,
-        maxLines = 2,
+        maxLines = 3,
         overflow = TextOverflow.Ellipsis,
         modifier = modifier
     )
@@ -62,14 +62,14 @@ fun AuthorAndReadTime(
         verticalAlignment = Alignment.CenterVertically
     ) {
         AsyncImage(
-            model = post.authorAvatar,
+            model = post.author.avatar,
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(shapeSize, shapeSize)
                 .clip(CircleShape),
             error = painterResource(id = R.drawable.ic_baseline_account_circle_24),
-            colorFilter = if (post.authorAvatar.isBlank()) {
+            colorFilter = if (post.author.avatar.isBlank()) {
                 ColorFilter.tint(MaterialTheme.colorScheme.primary)
             } else {
                 null
@@ -77,8 +77,8 @@ fun AuthorAndReadTime(
         )
 
         Text(
-            modifier = Modifier.padding(start = 4.dp),
-            text = "${post.author} . ${post.date}",
+            modifier = Modifier.padding(start = 8.dp),
+            text = "${post.author.name} . ${post.date}",
             style = MaterialTheme.typography.labelSmall
         )
     }

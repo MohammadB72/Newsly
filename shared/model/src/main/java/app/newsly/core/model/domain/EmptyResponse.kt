@@ -1,3 +1,6 @@
 package app.newsly.core.model.domain
 
-class EmptyResponse : BaseDomainModel()
+class EmptyResponse : BaseDomainModel() {
+    override val hasValidData: Boolean
+        get() = true
+}
