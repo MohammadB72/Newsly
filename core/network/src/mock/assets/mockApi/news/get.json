@@ -4,38 +4,92 @@
   "data": [
     {
       "id": 1541625,
-      "title": "Xiaomi Pad 6 series tablets with powerful chips and 120 Hz display are coming",
-      "image": "https://digiato.com/wp-content/uploads/2022/12/Xiaomi-pad-6-min.jpg",
-      "date": "",
-      "author": "Saba",
+      "title": "Twitter Blue users can now upload 60-minute long videos",
+      "image": "https://techcrunch.com/wp-content/uploads/2022/11/twitter-blue-breaking.jpg?w=430&h=230&crop=1",
+      "date": "2022-12-23T11:08:10",
+      "author": "Ivan Mehta",
       "author_avatar": "https://digiato.com/wp-content/uploads/avatars/277017-142x142.jpg",
       "link": ""
     },
     {
       "id": 1541634,
-      "title": "Google Misses Earnings Expectations Amid Light Revenue",
-      "image": "https://digiato.com/wp-content/uploads/2022/12/1_b814faca-97c2-4844-a57e-d2f58e1dd140_1200x.jpg",
-      "date": "",
+      "title": "A brief history of diffusion, the tech at the heart of modern image-generating AI",
+      "image": "https://techcrunch.com/wp-content/uploads/2022/08/ai-gen-unfiltered.jpg?w=430&h=230&crop=1",
+      "date": "2022-12-23T02:30:19",
       "author": "Mahdis",
       "author_avatar": "https://digiato.com/wp-content/uploads/avatars/278891-142x142.jpg",
       "link": ""
     },
     {
       "id": 1541602,
-      "title": "Android 13 will come to computers equipped with Windows 11",
-      "image": "https://digiato.com/wp-content/uploads/2022/12/Android-13-Windows-11.jpg",
-      "date": "",
-      "author": "Mahdi",
-      "author_avatar": "https://peivast.com/wp-content/uploads/Mahdi-Khodabandeh-e1657357059407.jpg.webp",
+      "title": "LastPass says hackers stole customers’ password vaults",
+      "image": "https://techcrunch.com/wp-content/uploads/2022/11/lastpass-password-manager.jpg?w=1390&crop=1",
+      "date": "2022-12-22T21:30:09",
+      "author": "Zack Whittake",
+      "author_avatar": "https://techcrunch.com/wp-content/uploads/2022/10/zw-profile.jpg?w=200&h=200&crop=1",
       "link": ""
     },
     {
       "id": 1541556,
-      "title": "Apple is likely to start producing MacBooks in Vietnam from mid-2023",
-      "image": "https://digiato.com/wp-content/uploads/2022/09/MacBook-Air-M2-5.jpg",
-      "date": "",
+      "title": "Google combines Maps and Waze teams as pressures mount to cut costs",
+      "image": "https://techcrunch.com/wp-content/uploads/2022/08/GettyImages-1235613908.jpg?w=430&h=230&crop=1",
+      "date": "2022-12-12T21:30:10",
       "author": "Sami",
       "author_avatar": "https://peivast.com/wp-content/uploads/SAMIE-e1656403784783.jpg",
+      "link": ""
+    },
+    {
+      "id": 1541555,
+      "title": "Twitter now shows how many people view your tweets",
+      "image": "https://techcrunch.com/wp-content/uploads/2022/10/twitter-bird-in-cage-3.jpg?w=430&h=230&crop=1",
+      "date": "2022-12-12T21:30:10",
+      "author": "Amanda Silberling",
+      "author_avatar": "",
+      "link": ""
+    },
+    {
+      "id": 1541554,
+      "title": "VFX studio Perception takes us inside the tech of ‘Black Panther: Wakanda Forever’",
+      "image": "https://techcrunch.com/wp-content/uploads/2022/12/8sMmAmN2x7mBiNKEX2o0aOTozEB.jpg?w=430&h=230&crop=1",
+      "date": "2022-12-12T21:30:10",
+      "author": "Lauren Forristal",
+      "author_avatar": "",
+      "link": ""
+    },
+    {
+      "id": 1541553,
+      "title": "Okta confirms another breach after hackers steal source code",
+      "image": "https://techcrunch.com/wp-content/uploads/2022/12/GettyImages-1356496030.jpg?w=430&h=230&crop=1",
+      "date": "2022-12-12T21:30:10",
+      "author": "Carly Page",
+      "author_avatar": "https://techcrunch.com/wp-content/uploads/2021/08/Headshot-BW.png?w=200&h=200&crop=1",
+      "link": ""
+    },
+    {
+      "id": 1541552,
+      "title": "Investor interest in SpaceX appears immune to Musk’s meddling",
+      "image": "https://techcrunch.com/wp-content/uploads/2022/12/GettyImages-1323284095.jpg?w=430&h=230&crop=1",
+      "date": "2022-12-12T21:30:10",
+      "author": "Rebecca Szkutak",
+      "author_avatar": "",
+      "link": ""
+    },
+    {
+      "id": 1541551,
+      "title": "Dear Sophie: What are the pros and cons of the E-2 and L-1A visas?",
+      "image": "https://techcrunch.com/wp-content/uploads/2021/01/dear-sophie-immigration-maze-3.jpg?w=430&h=230&crop=1",
+      "date": "2022-12-12T21:30:10",
+      "author": "Sophie Alcorn",
+      "author_avatar": "",
+      "link": ""
+    },
+    {
+      "id": 1541550,
+      "title": "As expats fled China’s zero-COVID, this developer built a sci-fi game for NetEase",
+      "image": "https://techcrunch.com/wp-content/uploads/2022/12/First-discover-base-camp.jpg?w=430&h=230&crop=1",
+      "date": "2022-12-12T21:30:10",
+      "author": "Rita Liao",
+      "author_avatar": "",
       "link": ""
     }
   ]

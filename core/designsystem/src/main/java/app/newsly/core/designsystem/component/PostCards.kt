@@ -9,12 +9,16 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import app.newsly.core.model.domain.News
+import app.newsly.shared.resources.R
 import coil.compose.AsyncImage
 
 
@@ -52,21 +56,30 @@ fun AuthorAndReadTime(
     post: News,
     modifier: Modifier = Modifier
 ) {
-    val shapeSize = 20.dp
-    Row(modifier) {
+    val shapeSize = 24.dp
+    Row(
+        modifier = modifier,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
         AsyncImage(
             model = post.authorAvatar,
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(shapeSize, shapeSize)
-                .clip(CircleShape)
+                .clip(CircleShape),
+            error = painterResource(id = R.drawable.ic_baseline_account_circle_24),
+            colorFilter = if (post.authorAvatar.isBlank()) {
+                ColorFilter.tint(MaterialTheme.colorScheme.primary)
+            } else {
+                null
+            }
         )
 
         Text(
-            modifier = Modifier.padding(start = 8.dp),
-            text = post.author,
-            style = MaterialTheme.typography.bodyMedium
+            modifier = Modifier.padding(start = 4.dp),
+            text = "${post.author} . ${post.date}",
+            style = MaterialTheme.typography.labelSmall
         )
     }
 }

@@ -1,6 +1,9 @@
 package app.newsly.core.model.network
 
 import app.newsly.core.model.domain.News
+import app.newsly.core.model.extension.differenceWithToday
+import app.newsly.core.model.extension.toDate
+
 import com.google.gson.annotations.SerializedName
 
 data class NewsNetworkModel(
@@ -18,7 +21,7 @@ data class NewsNetworkModel(
         image = image,
         author = author,
         authorAvatar = authorAvatar,
-        date = date,
+        date = date.toDate()?.differenceWithToday().toString(),
         link = link
     )
 }

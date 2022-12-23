@@ -2,14 +2,8 @@ package app.newsly.core.designsystem.icon
 
 import androidx.annotation.DrawableRes
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Apps
-import androidx.compose.material.icons.outlined.Category
-import androidx.compose.material.icons.outlined.Newspaper
-import androidx.compose.material.icons.outlined.Star
-import androidx.compose.material.icons.rounded.Apps
-import androidx.compose.material.icons.rounded.Category
-import androidx.compose.material.icons.rounded.Newspaper
-import androidx.compose.material.icons.rounded.Star
+import androidx.compose.material.icons.outlined.*
+import androidx.compose.material.icons.rounded.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
@@ -27,6 +21,9 @@ object NewslyIcons {
 
     val Apps = Icons.Rounded.Apps
     val AppsBorder = Icons.Outlined.Apps
+
+    val NoAccounts = Icons.Rounded.NoAccounts
+    val NoAccountsBorder = Icons.Outlined.NoAccounts
 }
 
 sealed class Icon {

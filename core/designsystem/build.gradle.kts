@@ -30,6 +30,7 @@ android {
 
 dependencies {
     implementation(project(":shared:model"))
+    implementation(project(":shared:resources"))
 
     api(platform(libs.androidx.compose.bom))
     api(libs.androidx.compose.ui.ui)

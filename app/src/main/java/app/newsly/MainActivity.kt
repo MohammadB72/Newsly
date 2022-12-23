@@ -20,13 +20,12 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        WindowCompat.setDecorFitsSystemWindows(window, false)
+        WindowCompat.setDecorFitsSystemWindows(window, true)
         setContent {
             NewslyTheme(
                 darkTheme = isSystemInDarkTheme()
             ) {
                 val snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
-
                 Scaffold(snackbarHost = { SnackbarHost(hostState = snackbarHostState) })
                 { paddingValues ->
                     paddingValues
