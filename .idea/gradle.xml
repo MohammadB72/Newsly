@@ -23,6 +23,7 @@
             <option value="$PROJECT_DIR$/feature/editorchoice" />
             <option value="$PROJECT_DIR$/feature/main" />
             <option value="$PROJECT_DIR$/feature/news" />
+            <option value="$PROJECT_DIR$/feature/newsdetail" />
             <option value="$PROJECT_DIR$/feature/splash" />
             <option value="$PROJECT_DIR$/shared" />
             <option value="$PROJECT_DIR$/shared/model" />

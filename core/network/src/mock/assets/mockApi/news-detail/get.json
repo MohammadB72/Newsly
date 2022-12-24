@@ -1,0 +1,78 @@
+{
+  "httpStatusCode": 200,
+  "status": "SUCCESS",
+  "data": {
+    "content": [
+      {
+        "type": "TEXT",
+        "text": "\nBy taking over Twitter, Elon Musk promised to make it a better social network for video producers. Now this platform has announced that users"
+      },
+      {
+        "type": "BOLD",
+        "text": "Blue Twitter"
+      },
+      {
+        "type": "TEXT",
+        "text": " can through the web version, "
+      },
+      {
+        "type": "BOLD",
+        "text": "60 minute videos"
+      },
+      {
+        "type": "TEXT",
+        "text": " With "
+      },
+      {
+        "type": "BOLD",
+        "text": "1080p resolution"
+      },
+      {
+        "type": "TEXT",
+        "text": " & "
+      },
+      {
+        "type": "BOLD",
+        "text": "The volume is 2 GB"
+      },
+      {
+        "type": "TEXT",
+        "text": " Upload.\n\nBefore Twitter "
+      },
+      {
+        "type": "link",
+        "text": "Blue service related page",
+        "link": "https://help.twitter.com/en/using-twitter/twitter-blue"
+      },
+      {
+        "type": "TEXT",
+        "text": " update, users of this paid service were only able to upload 10-minute videos with a resolution of 1080p and a maximum size of 512 MB. Of course, this limitation still exists for users in the iOS and Android version, and only in the web version, longer and larger videos can be uploaded to this social network.\n\n"
+      },
+      {
+        "type": "H1",
+        "text": "Will uploading longer videos pose a new challenge for Twitter?"
+      },
+      {
+        "type": "TEXT",
+        "text": "\n\nTwitter has said that it tries to provide the highest quality videos, however it may manipulate the quality for some reason. In fact, this manipulation on the resolution and bitrate of the video is done according to the speed and stability of the user's Internet, which is not a strange issue.\n\n"
+      },
+      {
+        "type": "IMAGE",
+        "url": "https://digiato.com/wp-content/uploads/2022/11/Twitter-Blue-Check.jpg"
+      },
+      {
+        "type": "TEXT",
+        "text": "\n\nAlthough the ability to upload longer videos is useful for users and Twitter can even go to war with YouTube in a way, but on the other hand, it can bring more challenges for this social network.\n\n Considering that Twitter has fired many of its employees and There is less monitoring on the contents, maybe users will take advantage of this opportunity and upload movies and series on this social network. Nearly a month ago, after Twitter's copyright system was disrupted, users began to"
+      },
+      {
+        "type": "LINK",
+        "text": "Upload full movies in two-minute parts",
+        "link": "https://digiato.com/article/2022/11/21/twitters-broken-its-copyright-strike-system-users-are-uploading-full-movies"
+      },
+      {
+        "type": "TEXT",
+        "text": "they did Therefore, the work for such users is now easier.\n\nIn view of this, the employees of the content monitoring department and the automated systems used for this work should focus more on this issue so that users start publishing videos. Don't have the copyright in this social network.n\nAt the moment, we don't know if Elon Musk wants to make money by uploading long videos on Twitter or if he is satisfied with the same cost of the Twitter Blue service. Maybe this platform, like YouTube, will start publishing multiple ads between long videos.\n"
+      }
+    ]
+  }
+}
