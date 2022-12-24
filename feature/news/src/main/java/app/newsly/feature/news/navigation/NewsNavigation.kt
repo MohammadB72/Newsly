@@ -12,8 +12,8 @@ fun NavController.navigateToNews(navOptions: NavOptions? = null) {
     this.navigate(newsNavigationRoute, navOptions)
 }
 
-fun NavGraphBuilder.newsScreen() {
+fun NavGraphBuilder.newsScreen(onPostTapped: (postId: Int) -> Unit) {
     composable(newsNavigationRoute) {
-        NewsRoute()
+        NewsRoute(onPostTapped = onPostTapped)
     }
 }

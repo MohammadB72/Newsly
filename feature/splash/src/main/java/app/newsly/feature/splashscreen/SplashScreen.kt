@@ -41,9 +41,7 @@ fun SplashScreen(
     onFailureOccurred: @Composable (RequestException) -> Unit
 ) {
     Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .wrapContentSize(Alignment.Center),
+        modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

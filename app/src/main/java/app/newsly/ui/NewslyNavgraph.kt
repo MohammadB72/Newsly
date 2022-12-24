@@ -8,12 +8,16 @@ import androidx.navigation.navOptions
 import app.newsly.core.model.RequestException
 import app.newsly.feature.main.navigation.mainGraph
 import app.newsly.feature.main.navigation.navigateToMainGraph
+import app.newsly.feature.newsdetail.navigation.navigateToNewsDetail
+import app.newsly.feature.newsdetail.navigation.newsDetailScreen
 import app.newsly.feature.splashscreen.navigation.splashNavigationRoute
 import app.newsly.feature.splashscreen.navigation.splashScreen
 
 
 @Composable
-fun NewslyNavgraph(onFailureOccurred: @Composable (RequestException) -> Unit) {
+fun NewslyNavgraph(
+    onFailureOccurred: @Composable (RequestException) -> Unit
+) {
     val navController = rememberNavController()
     NavHost(
         modifier = Modifier,
@@ -28,6 +32,9 @@ fun NewslyNavgraph(onFailureOccurred: @Composable (RequestException) -> Unit) {
             },
             onFailureOccurred = onFailureOccurred
         )
-        mainGraph()
+        mainGraph(onPostTapped = { postId ->
+            navController.navigateToNewsDetail(postId = postId)
+        })
+        newsDetailScreen()
     }
 }

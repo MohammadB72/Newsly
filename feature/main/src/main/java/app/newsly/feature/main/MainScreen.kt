@@ -20,6 +20,7 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterialApi::class)
 @Composable
 fun MainRoute(
+    onPostTapped: (postId: Int) -> Unit,
     mainScreenState: MainScreenState = rememberMainScreenState()
 ) {
     val sheetState = rememberModalBottomSheetState(
@@ -31,12 +32,15 @@ fun MainRoute(
     ModalBottomSheetLayout(
         sheetState = sheetState,
         sheetContent = { BottomSheet() },
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .navigationBarsPadding()
     ) {
         MainScreen(
             mainScreenState = mainScreenState,
             sheetState = sheetState,
-            coroutineScope = coroutineScope
+            coroutineScope = coroutineScope,
+            onPostTapped = onPostTapped
         )
     }
 }
@@ -46,7 +50,8 @@ fun MainRoute(
 fun MainScreen(
     mainScreenState: MainScreenState,
     sheetState: ModalBottomSheetState,
-    coroutineScope: CoroutineScope
+    coroutineScope: CoroutineScope,
+    onPostTapped: (postId: Int) -> Unit,
 ) {
     Scaffold(
         modifier = Modifier,
@@ -68,6 +73,7 @@ fun MainScreen(
             .padding(padding)
         NewslyNavHost(
             modifier = contentModifier,
+            onPostTapped = onPostTapped,
             navController = mainScreenState.navController
         )
     }

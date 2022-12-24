@@ -76,6 +76,7 @@ android {
 dependencies {
     implementation(project(":feature:main"))
     implementation(project(":feature:splash"))
+    implementation(project(":feature:newsdetail"))
 
     implementation(project(":core:designsystem"))
 

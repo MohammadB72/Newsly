@@ -20,31 +20,33 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        WindowCompat.setDecorFitsSystemWindows(window, true)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             NewslyTheme(
                 darkTheme = isSystemInDarkTheme()
             ) {
                 val snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
-                Scaffold(snackbarHost = { SnackbarHost(hostState = snackbarHostState) })
+                Scaffold(
+                    snackbarHost = { SnackbarHost(hostState = snackbarHostState) })
                 { paddingValues ->
                     paddingValues
-                    NewslyNavgraph(onFailureOccurred = { exception ->
-                        if (true) {
-                            LaunchedEffect(snackbarHostState, exception.id)
-                            {
-                                if (exception.actionAfterFailure == FailureAction.NONE) {
-                                    val snackbarResult = snackbarHostState.showSnackbar(
-                                        exception.networkError?.message.toString(),
-                                        actionLabel = getString(R.string.retry)
-                                    )
-                                    if (snackbarResult == SnackbarResult.ActionPerformed) {
-                                        exception.retryBlock()
+                    NewslyNavgraph(
+                        onFailureOccurred = { exception ->
+                            if (true) {
+                                LaunchedEffect(snackbarHostState, exception.id)
+                                {
+                                    if (exception.actionAfterFailure == FailureAction.NONE) {
+                                        val snackbarResult = snackbarHostState.showSnackbar(
+                                            exception.networkError?.message.toString(),
+                                            actionLabel = getString(R.string.retry)
+                                        )
+                                        if (snackbarResult == SnackbarResult.ActionPerformed) {
+                                            exception.retryBlock()
+                                        }
                                     }
                                 }
                             }
-                        }
-                    })
+                        })
                 }
             }
         }

@@ -16,14 +16,14 @@ fun NavController.navigateToMainGraph(navOptions: NavOptions? = null) {
     this.navigate(mainGraphRoutePattern, navOptions)
 }
 
-fun NavGraphBuilder.mainGraph() {
+fun NavGraphBuilder.mainGraph(onPostTapped: (postId: Int) -> Unit) {
     navigation(
         startDestination = mainRoute,
-        route = mainGraphRoutePattern
+        route = mainGraphRoutePattern,
     )
     {
         composable(route = mainRoute) {
-            MainRoute()
+            MainRoute(onPostTapped = onPostTapped)
         }
     }
 }

@@ -14,6 +14,7 @@ import app.newsly.feature.news.navigation.newsScreen
 @Composable
 fun NewslyNavHost(
     modifier: Modifier = Modifier,
+    onPostTapped: (postId: Int) -> Unit,
     navController: NavHostController
 ) {
     NavHost(
@@ -21,9 +22,10 @@ fun NewslyNavHost(
         navController = navController,
         startDestination = newsNavigationRoute
     ) {
-        newsScreen()
+        newsScreen(onPostTapped = onPostTapped)
         editorChoiceScreen()
         categoriesScreen()
         appsScreen()
+
     }
 }

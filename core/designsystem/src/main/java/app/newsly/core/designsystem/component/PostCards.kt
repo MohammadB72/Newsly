@@ -87,11 +87,12 @@ fun AuthorAndReadTime(
 
 @Composable
 fun PostCardSimple(
+    onPostTapped: (id: Int) -> Unit,
     post: News
 ) {
     Row(
         modifier = Modifier
-            .clickable { }
+            .clickable { onPostTapped(post.id) }
             .padding(16.dp)
     ) {
         PostImage(imageUrl = post.image)

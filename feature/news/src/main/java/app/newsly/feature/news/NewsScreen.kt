@@ -19,20 +19,28 @@ import app.newsly.core.model.domain.News
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
 internal fun NewsRoute(
+    onPostTapped: (postId: Int) -> Unit,
     viewModel: NewsViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.newsUiState.collectAsStateWithLifecycle()
-    NewsScreen(uiState = uiState)
+    NewsScreen(
+        onPostTapped = onPostTapped,
+        uiState = uiState
+    )
 }
 
 @Composable
 fun NewsScreen(
+    onPostTapped: (postId: Int) -> Unit,
     uiState: NewsUiState
 ) {
     when (uiState) {
         NewsUiState.Loading -> {}
         is NewsUiState.HasNews -> {
-            PostList(posts = uiState.news)
+            PostList(
+                posts = uiState.news,
+                onPostTapped = onPostTapped
+            )
         }
         is NewsUiState.Failure -> {}
     }
@@ -41,6 +49,7 @@ fun NewsScreen(
 @Composable
 fun PostList(
     posts: List<News>,
+    onPostTapped: (postId: Int) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     LazyColumn(
@@ -48,7 +57,10 @@ fun PostList(
         state = rememberLazyListState()
     ) {
         items(items = posts, key = { post -> post.id }) { post ->
-            PostCardSimple(post = post)
+            PostCardSimple(
+                onPostTapped = onPostTapped,
+                post = post
+            )
             PostListDivider()
         }
     }
