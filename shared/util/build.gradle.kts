@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "app.newsly.shared.model"
+    namespace = "app.newsly.shared.util"
 
     flavorDimensions += flavor.dimension.FlavorDimension.MODE.value
     productFlavors {
@@ -21,6 +21,5 @@ android {
 }
 
 dependencies {
-    implementation(project(":shared:util"))
-    implementation(libs.gson)
+    implementation(libs.retrofit.gsonConverter)
 }

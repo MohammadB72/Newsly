@@ -28,6 +28,7 @@
             <option value="$PROJECT_DIR$/shared" />
             <option value="$PROJECT_DIR$/shared/model" />
             <option value="$PROJECT_DIR$/shared/resources" />
+            <option value="$PROJECT_DIR$/shared/util" />
           </set>
         </option>
       </GradleProjectSettings>

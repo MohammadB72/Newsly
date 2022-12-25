@@ -1,22 +1,29 @@
 package app.newsly.feature.newsdetail
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Text
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
-fun NewsDetailRoute(postId: Int) {
+fun NewsDetailRoute(
+    postId: Int,
+    viewModel: NewsDetailViewModel = hiltViewModel()
+) {
     Column(modifier = Modifier.fillMaxSize()) {
         Box(
             Modifier
                 .fillMaxSize()
-                .background(Color.DarkGray)
                 .padding(WindowInsets.statusBars.asPaddingValues())
         ) {
-            Text(text = "$postId", modifier = Modifier.background(Color.Red))
+            LazyColumn(
+                modifier = Modifier,
+                state = rememberLazyListState()
+            ) {
+
+            }
         }
     }
 }
