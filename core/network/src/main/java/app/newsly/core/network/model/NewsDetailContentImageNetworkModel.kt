@@ -1,4 +1,4 @@
-package app.newsly.core.model.network.newsdetail
+package app.newsly.core.network.model
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,8 +1,8 @@
 package app.newsly.core.network.datasource.news
 
 import app.newsly.core.model.NetworkResponse
-import app.newsly.core.model.network.NewsNetworkModel
-import app.newsly.core.model.network.newsdetail.NewsDetailNetworkModel
+import app.newsly.core.network.model.NewsDetailNetworkModel
+import app.newsly.core.network.model.NewsNetworkModel
 import retrofit2.http.GET
 import retrofit2.http.Query
 

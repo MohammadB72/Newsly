@@ -14,7 +14,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.newsly.core.designsystem.component.PostCardSimple
-import app.newsly.core.model.domain.News
+import app.newsly.core.domain.model.News
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
@@ -58,8 +58,13 @@ fun PostList(
     ) {
         items(items = posts, key = { post -> post.id }) { post ->
             PostCardSimple(
+                id = post.id,
+                title = post.title,
+                imageUrl = post.image,
+                authorName = post.author.name,
+                authorAvatar = post.author.avatar,
+                postDate = post.date,
                 onPostTapped = onPostTapped,
-                post = post
             )
             PostListDivider()
         }

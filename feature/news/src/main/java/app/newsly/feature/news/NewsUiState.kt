@@ -1,8 +1,8 @@
 package app.newsly.feature.news
 
 import androidx.compose.runtime.Immutable
+import app.newsly.core.domain.model.News
 import app.newsly.core.model.RequestException
-import app.newsly.core.model.domain.News
 
 
 @Immutable

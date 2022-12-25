@@ -1,4 +1,4 @@
-package app.newsly.core.model.network.newsdetail
+package app.newsly.core.network.model
 
 enum class ContentType {
     TEXT, IMAGE, LINK, BOLD

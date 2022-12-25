@@ -17,7 +17,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import app.newsly.core.model.domain.News
 import app.newsly.shared.resources.R
 import coil.compose.AsyncImage
 
@@ -53,7 +52,9 @@ fun PostTitle(
 
 @Composable
 fun AuthorAndReadTime(
-    post: News,
+    authorName: String,
+    authorAvatar: String,
+    postDate: String,
     modifier: Modifier = Modifier
 ) {
     val shapeSize = 24.dp
@@ -62,14 +63,14 @@ fun AuthorAndReadTime(
         verticalAlignment = Alignment.CenterVertically
     ) {
         AsyncImage(
-            model = post.author.avatar,
+            model = authorAvatar,
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(shapeSize, shapeSize)
                 .clip(CircleShape),
             error = painterResource(id = R.drawable.ic_baseline_account_circle_24),
-            colorFilter = if (post.author.avatar.isBlank()) {
+            colorFilter = if (authorAvatar.isBlank()) {
                 ColorFilter.tint(MaterialTheme.colorScheme.primary)
             } else {
                 null
@@ -78,7 +79,7 @@ fun AuthorAndReadTime(
 
         Text(
             modifier = Modifier.padding(start = 8.dp),
-            text = "${post.author.name} . ${post.date}",
+            text = "${authorName} . ${postDate}",
             style = MaterialTheme.typography.labelSmall
         )
     }
@@ -87,19 +88,29 @@ fun AuthorAndReadTime(
 
 @Composable
 fun PostCardSimple(
-    onPostTapped: (id: Int) -> Unit,
-    post: News
+    id: Int,
+    title: String,
+    imageUrl: String,
+    authorName: String,
+    authorAvatar: String,
+    postDate: String,
+    onPostTapped: (id: Int) -> Unit
 ) {
     Row(
         modifier = Modifier
-            .clickable { onPostTapped(post.id) }
+            .clickable { onPostTapped(id) }
             .padding(16.dp)
     ) {
-        PostImage(imageUrl = post.image)
+        PostImage(imageUrl = imageUrl)
 
         Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp)) {
-            PostTitle(title = post.title)
-            AuthorAndReadTime(post, modifier = Modifier.padding(top = 16.dp))
+            PostTitle(title = title)
+            AuthorAndReadTime(
+                authorName = authorName,
+                authorAvatar = authorAvatar,
+                postDate = postDate,
+                modifier = Modifier.padding(top = 16.dp)
+            )
         }
     }
 }

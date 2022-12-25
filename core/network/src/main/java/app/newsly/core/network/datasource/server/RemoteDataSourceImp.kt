@@ -2,7 +2,7 @@ package app.newsly.core.network.datasource.server
 
 import android.content.Context
 import app.newsly.core.model.RequestResult
-import app.newsly.core.model.network.EmptyResponseNetworkModel
+import app.newsly.core.network.model.EmptyResponseNetworkModel
 import app.newsly.core.network.retrofit.apiCall
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject

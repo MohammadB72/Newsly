@@ -1,11 +1,11 @@
 package app.newsly.core.domain
 
 import app.newsly.core.data.repository.ServerStatusRepository
+import app.newsly.core.domain.model.EmptyResponse
 import app.newsly.core.model.RequestResult
 import app.newsly.core.model.doOnFailure
 import app.newsly.core.model.doOnLoading
 import app.newsly.core.model.doOnSuccess
-import app.newsly.core.model.domain.EmptyResponse
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
@@ -19,7 +19,7 @@ class GetServerStatusUseCase @Inject constructor(
             serverStatusRepository
                 .getServerStatus()
                 .doOnLoading { emit(RequestResult.Loading) }
-                .doOnSuccess { data -> emit(RequestResult.Success(data.toDomainModel())) }
+                .doOnSuccess { data -> emit(RequestResult.Success(EmptyResponse())) }
                 .doOnFailure { exception -> emit(RequestResult.Fail(exception)) }
         }
     }

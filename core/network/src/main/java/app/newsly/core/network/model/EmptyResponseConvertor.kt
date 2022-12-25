@@ -1,6 +1,5 @@
 package app.newsly.core.network.model
 
-import app.newsly.core.model.network.EmptyResponseNetworkModel
 import okhttp3.ResponseBody
 import retrofit2.Converter
 import retrofit2.Retrofit
