@@ -1,5 +1,5 @@
 package app.newsly.core.domain.model
 
-data class NewsDetailContentTextBold(
+data class ContentTextBold(
     val text: String,
 )

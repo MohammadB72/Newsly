@@ -2,8 +2,8 @@ package app.newsly.core.network.datasource.news
 
 import android.content.Context
 import app.newsly.core.model.RequestResult
-import app.newsly.core.network.model.NewsDetailNetworkModel
-import app.newsly.core.network.model.NewsNetworkModel
+import app.newsly.core.network.model.NewsApiModel
+import app.newsly.core.network.model.NewsDetailApiModel
 import app.newsly.core.network.retrofit.apiCall
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
@@ -13,13 +13,13 @@ class NewsRemoteDataSourceImp @Inject constructor(
     private val newsApi: NewsApi
 ) : NewsRemoteDataSource {
 
-    override suspend fun getNews(): RequestResult<List<NewsNetworkModel>> =
+    override suspend fun getNews(): RequestResult<List<NewsApiModel>> =
         apiCall(
             context = context,
             block = { newsApi.getNews(page = 1).data }
         )
 
-    override suspend fun getNewsDetail(): RequestResult<NewsDetailNetworkModel> =
+    override suspend fun getNewsDetail(): RequestResult<NewsDetailApiModel> =
         apiCall(
             context = context,
             block = { newsApi.getNewsDetail().data }

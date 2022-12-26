@@ -7,8 +7,8 @@ import app.newsly.core.model.RequestResult
 import app.newsly.core.model.doOnFailure
 import app.newsly.core.model.doOnLoading
 import app.newsly.core.model.doOnSuccess
-import app.newsly.core.model.extension.differenceWithToday
-import app.newsly.core.model.extension.toDate
+import app.newsly.shared.util.differenceWithToday
+import app.newsly.shared.util.toDate
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject

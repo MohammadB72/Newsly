@@ -19,7 +19,7 @@ class EmptyResponseConvertor @Inject constructor() : Converter.Factory() {
         return Converter<ResponseBody, Any> { body ->
             val contentType = body.contentType()
             if (contentType == null)
-                EmptyResponseNetworkModel()
+                EmptyResponseApiModel()
             else delegate.convert(
                 body
             )

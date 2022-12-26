@@ -26,6 +26,7 @@ dependencies {
     implementation(project(":core:network"))
     implementation(project(":core:data"))
     implementation(project(":shared:model"))
+    implementation(project(":shared:util"))
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)

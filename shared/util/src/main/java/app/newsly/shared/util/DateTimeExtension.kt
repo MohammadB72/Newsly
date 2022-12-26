@@ -1,4 +1,4 @@
-package app.newsly.core.model.extension
+package app.newsly.shared.util
 
 import java.text.SimpleDateFormat
 import java.util.*

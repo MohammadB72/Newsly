@@ -1,4 +1,4 @@
-package app.newsly.core.model
+package app.newsly.core.network.retrofit
 
 data class NetworkResponse<T>(
     val status: String,

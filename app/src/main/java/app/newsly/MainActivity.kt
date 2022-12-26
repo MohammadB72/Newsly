@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
                                 {
                                     if (exception.actionAfterFailure == FailureAction.NONE) {
                                         val snackbarResult = snackbarHostState.showSnackbar(
-                                            exception.networkError?.message.toString(),
+                                            message = exception.networkErrorMessage.toString(),
                                             actionLabel = getString(R.string.retry)
                                         )
                                         if (snackbarResult == SnackbarResult.ActionPerformed) {

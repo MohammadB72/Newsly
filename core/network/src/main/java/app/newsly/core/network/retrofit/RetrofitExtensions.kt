@@ -1,7 +1,8 @@
 package app.newsly.core.network.retrofit
 
 import android.content.Context
-import app.newsly.core.model.*
+import app.newsly.core.model.RequestException
+import app.newsly.core.model.RequestResult
 import app.newsly.core.network.util.isNetworkConnected
 import app.newsly.shared.resources.BuildConfig
 import app.newsly.shared.resources.R
@@ -23,12 +24,19 @@ suspend fun <T> apiCall(
         }.onSuccess { value ->
             return RequestResult.Success(value)
         }.onFailure { exception ->
-            return RequestResult.Fail(RequestException(networkError = exception.toNetworkError()))
+            exception.toNetworkError().let {
+                return RequestResult.Fail(
+                    RequestException(
+                        key = it.key,
+                        networkErrorMessage = it.message
+                    )
+                )
+            }
         }
     } else {
-        return RequestResult.Fail(RequestException(inAppError = InAppError(resMessage = R.string.not_connected)))
+        return RequestResult.Fail(RequestException(inAppErrorMessage = R.string.not_connected))
     }
-    return RequestResult.Fail(RequestException(inAppError = InAppError(resMessage = R.string.network_unknown_error)))
+    return RequestResult.Fail(RequestException(inAppErrorMessage = R.string.network_unknown_error))
 }
 
 private fun Throwable.toNetworkError(): NetworkError {

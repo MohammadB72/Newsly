@@ -1,6 +1,5 @@
 package app.newsly.core.domain.model
 
-data class NewsDetailContentLink(
+data class ContentTextH1(
     val text: String,
-    val url: String,
 )

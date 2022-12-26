@@ -19,8 +19,3 @@ android {
         }
     }
 }
-
-dependencies {
-    implementation(project(":shared:util"))
-    implementation(libs.gson)
-}
