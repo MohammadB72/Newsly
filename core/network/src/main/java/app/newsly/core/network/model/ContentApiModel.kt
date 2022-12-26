@@ -7,7 +7,8 @@ import com.google.gson.annotations.SerializedName
 
 data class ContentApiModel(
     @SerializedName("type") val type: ContentType?,
-    @SerializedName("attr") private val _attr: JsonObject?
+    @SerializedName("attr") val attr: JsonObject?
 ) {
-    val attr: String get() = _attr.toString()
+    val text: String? get() = attr?.get("text")?.asString
+    val href: String? get() = attr?.get("href")?.asString
 }

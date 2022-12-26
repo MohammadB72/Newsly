@@ -5,12 +5,21 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material3.*
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.Text
+
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import app.newsly.core.model.FailureAction
+import app.newsly.core.model.RequestException
 import app.newsly.feature.main.navigation.NewslyNavHost
 import app.newsly.feature.main.navigation.TopLevelDestination
 import app.newsly.shared.resources.R
@@ -21,6 +30,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun MainRoute(
     onPostTapped: (postId: Int) -> Unit,
+    onFailureOccurred: @Composable (RequestException) -> Unit,
     mainScreenState: MainScreenState = rememberMainScreenState()
 ) {
     val sheetState = rememberModalBottomSheetState(
@@ -40,7 +50,8 @@ fun MainRoute(
             mainScreenState = mainScreenState,
             sheetState = sheetState,
             coroutineScope = coroutineScope,
-            onPostTapped = onPostTapped
+            onPostTapped = onPostTapped,
+            onFailureOccurred = onFailureOccurred
         )
     }
 }
@@ -52,9 +63,12 @@ fun MainScreen(
     sheetState: ModalBottomSheetState,
     coroutineScope: CoroutineScope,
     onPostTapped: (postId: Int) -> Unit,
+    onFailureOccurred: @Composable (RequestException) -> Unit,
 ) {
+    val snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
     Scaffold(
         modifier = Modifier,
+        snackbarHost = { SnackbarHost(hostState = snackbarHostState) },
         topBar = {
             TopAppBar(
                 sheetState = sheetState,
@@ -71,11 +85,28 @@ fun MainScreen(
     ) { padding ->
         val contentModifier = Modifier
             .padding(padding)
+        val context = LocalContext.current
         NewslyNavHost(
             modifier = contentModifier,
             onPostTapped = onPostTapped,
+            onFailureOccurred = { exception ->
+                LaunchedEffect(snackbarHostState, exception.id)
+                {
+                    if (exception.actionAfterFailure == FailureAction.NONE) {
+                        val snackbarResult = snackbarHostState.showSnackbar(
+                            message = exception.networkErrorMessage.toString(),
+                            actionLabel = context.getString(R.string.retry)
+                        )
+                        if (snackbarResult == SnackbarResult.ActionPerformed) {
+                            exception.retryBlock()
+                        }
+                    }
+                }
+            },
             navController = mainScreenState.navController
         )
+
+
     }
 }
 

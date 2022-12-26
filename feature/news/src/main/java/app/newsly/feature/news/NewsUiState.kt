@@ -8,6 +8,6 @@ import app.newsly.core.model.RequestException
 @Immutable
 sealed interface NewsUiState {
     object Loading : NewsUiState
-    data class HasNews(val news: List<News>) : NewsUiState
+    data class SUCCESS(val news: List<News>) : NewsUiState
     data class Failure(val exception: RequestException) : NewsUiState
 }

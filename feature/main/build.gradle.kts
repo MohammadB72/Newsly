@@ -37,6 +37,7 @@ dependencies {
     implementation(project(":core:domain"))
 
     implementation(project(":shared:resources"))
+    implementation(project(":shared:model"))
 
     implementation(libs.androidx.hilt.navigation.compose)
 }

@@ -31,7 +31,7 @@ class NewsViewModel @Inject constructor(
                             NewsUiState.Loading
                         }
                         is RequestResult.Success -> {
-                            NewsUiState.HasNews(result.data)
+                            NewsUiState.SUCCESS(result.data)
                         }
                         is RequestResult.Fail -> {
                             NewsUiState.Failure(result.exception)

@@ -32,9 +32,10 @@ fun NewslyNavgraph(
             },
             onFailureOccurred = onFailureOccurred
         )
-        mainGraph(onPostTapped = { postId ->
-            navController.navigateToNewsDetail(postId = postId)
-        })
+        mainGraph(
+            onPostTapped = { postId -> navController.navigateToNewsDetail(postId = postId) },
+            onFailureOccurred = onFailureOccurred
+        )
         newsDetailScreen()
     }
 }

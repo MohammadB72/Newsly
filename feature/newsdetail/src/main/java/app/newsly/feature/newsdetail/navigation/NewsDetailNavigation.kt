@@ -5,7 +5,8 @@ import androidx.navigation.compose.composable
 import app.newsly.feature.newsdetail.NewsDetailRoute
 
 
-const val newsDetailNavigationRoute = "news_detail_route?postId={postId}"
+internal const val postIdArgs = "topicId"
+const val newsDetailNavigationRoute = "news_detail_route?postId={$postIdArgs}"
 
 fun NavController.navigateToNewsDetail(postId: Int, navOptions: NavOptions? = null) {
     this.navigate("news_detail_route?postId=$postId", navOptions)
@@ -14,12 +15,11 @@ fun NavController.navigateToNewsDetail(postId: Int, navOptions: NavOptions? = nu
 fun NavGraphBuilder.newsDetailScreen() {
     composable(
         route = newsDetailNavigationRoute,
-        arguments = listOf(navArgument("postId") {
-            type = NavType.IntType
-            defaultValue = -1
+        arguments = listOf(navArgument(postIdArgs) {
+            type = NavType.StringType
+            defaultValue = ""
         })
-    ) { backStackEntry ->
-        val postId = backStackEntry.arguments?.getInt("postId")
-        NewsDetailRoute(postId = postId!!)
+    ) {
+        NewsDetailRoute()
     }
 }

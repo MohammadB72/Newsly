@@ -13,6 +13,6 @@ class NewsRepositoryImp @Inject constructor(
     override suspend fun getNews(): RequestResult<List<NewsApiModel>> =
         newsRemoteDataSource.getNews()
 
-    override suspend fun getNewsDetail(): RequestResult<NewsDetailApiModel> =
-        newsRemoteDataSource.getNewsDetail()
+    override suspend fun getNewsDetail(postId: Int): RequestResult<NewsDetailApiModel> =
+        newsRemoteDataSource.getNewsDetail(postId = postId)
 }

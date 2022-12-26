@@ -19,9 +19,9 @@ class NewsRemoteDataSourceImp @Inject constructor(
             block = { newsApi.getNews(page = 1).data }
         )
 
-    override suspend fun getNewsDetail(): RequestResult<NewsDetailApiModel> =
+    override suspend fun getNewsDetail(postId: Int): RequestResult<NewsDetailApiModel> =
         apiCall(
             context = context,
-            block = { newsApi.getNewsDetail().data }
+            block = { newsApi.getNewsDetail(postId = postId).data }
         )
 }

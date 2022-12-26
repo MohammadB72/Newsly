@@ -15,34 +15,40 @@ import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.newsly.core.designsystem.component.PostCardSimple
 import app.newsly.core.domain.model.News
+import app.newsly.core.model.RequestException
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
 internal fun NewsRoute(
     onPostTapped: (postId: Int) -> Unit,
+    onFailureOccurred: @Composable (RequestException) -> Unit,
     viewModel: NewsViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.newsUiState.collectAsStateWithLifecycle()
     NewsScreen(
         onPostTapped = onPostTapped,
-        uiState = uiState
+        uiState = uiState,
+        onFailureOccurred = onFailureOccurred
     )
 }
 
 @Composable
 fun NewsScreen(
     onPostTapped: (postId: Int) -> Unit,
-    uiState: NewsUiState
+    uiState: NewsUiState,
+    onFailureOccurred: @Composable (RequestException) -> Unit
 ) {
     when (uiState) {
         NewsUiState.Loading -> {}
-        is NewsUiState.HasNews -> {
+        is NewsUiState.SUCCESS -> {
             PostList(
                 posts = uiState.news,
                 onPostTapped = onPostTapped
             )
         }
-        is NewsUiState.Failure -> {}
+        is NewsUiState.Failure -> {
+            onFailureOccurred(uiState.exception)
+        }
     }
 }
 
