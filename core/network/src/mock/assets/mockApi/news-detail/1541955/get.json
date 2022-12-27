@@ -1,0 +1,17 @@
+{
+  "httpStatusCode": 200,
+  "status": "SUCCESS",
+  "data": {
+    "id": 1541955,
+    "title": "Continued retrenchment on Twitter",
+    "image": "https://digiato.com/wp-content/uploads/2022/12/Twitter-Exit-910x600.jpg",
+    "date": "2022-12-12T21:30:10",
+    "author": {
+      "name": "Javad Taji",
+      "avatar": "https://digiato.com/wp-content/uploads/avatars/224206-142x142.jpg"
+    },
+    "link": "https://digiato.com/article/2022/12/23/twitter-lays-off-employees-in-public-policy",
+    "content": [
+    ]
+  }
+}

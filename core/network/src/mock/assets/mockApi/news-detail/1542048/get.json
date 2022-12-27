@@ -3,7 +3,14 @@
   "status": "SUCCESS",
   "data": {
     "id": 1542048,
-    "image_url": "https://digiato.com/wp-content/uploads/2022/12/Twitter-Blue-2-910x600.jpg",
+    "title": "Twitter Blue users can now upload 60-minute videos",
+    "image": "https://digiato.com/wp-content/uploads/2022/12/Twitter-Blue-2-910x600.jpg",
+    "date": "2022-12-23T02:30:19",
+    "author": {
+      "name": "Mohammad Qureshi",
+      "avatar": "https://digiato.com/wp-content/uploads/avatars/210361-142x142.jpg"
+    },
+    "link": "https://digiato.com/article/2022/12/23/twitter-blue-users-can-now-upload-60-minute-long-videos",
     "content": [
       {
         "type": "TEXT",
@@ -100,7 +107,7 @@
         "type": "LINK",
         "attr": {
           "text": "Upload full movies in two-minute parts",
-          "url": "https://digiato.com/article/2022/11/21/twitters-broken-its-copyright-strike-system-users-are-uploading-full-movies"
+          "href": "https://digiato.com/article/2022/11/21/twitters-broken-its-copyright-strike-system-users-are-uploading-full-movies"
         }
       },
       {

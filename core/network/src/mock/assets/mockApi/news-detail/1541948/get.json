@@ -1,0 +1,17 @@
+{
+  "httpStatusCode": 200,
+  "status": "SUCCESS",
+  "data": {
+    "id": 1541948,
+    "title": "LastPass: Hackers have stolen users' encrypted data",
+    "image": "https://digiato.com/wp-content/uploads/2022/12/LastPass-910x600.jpg",
+    "date": "2022-12-12T21:30:10",
+    "author": {
+      "name": "Mohammad Qureshi",
+      "avatar": "https://digiato.com/wp-content/uploads/avatars/210361-142x142.jpg"
+    },
+    "link": "https://digiato.com/article/2022/12/23/lastpass-customer-password-vaults-stolen",
+    "content": [
+    ]
+  }
+}

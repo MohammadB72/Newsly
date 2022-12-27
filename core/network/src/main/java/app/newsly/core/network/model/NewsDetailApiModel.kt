@@ -4,6 +4,6 @@ import com.google.gson.annotations.SerializedName
 
 data class NewsDetailApiModel(
     @SerializedName("id") val id: Int?,
-    @SerializedName("image_url") val imageUrl: String?,
-    @SerializedName("content") val content: List<ContentApiModel>?,
+    @SerializedName("image") val imageUrl: String?,
+    @SerializedName("content") val contentItems: List<ContentItemApiModel>?,
 )

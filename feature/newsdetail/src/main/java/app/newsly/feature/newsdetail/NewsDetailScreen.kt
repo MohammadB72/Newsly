@@ -68,12 +68,9 @@ fun SuccessContent(newsDetail: NewsDetail) {
             Spacer(Modifier.height(defaultSpacerSize))
         }
 
-
-        items(items = newsDetail.content)
-        {
+        items(items = newsDetail.content) {
             Paragraph(content = it)
         }
-
     }
 }
 
@@ -94,11 +91,6 @@ fun Paragraph(content: Content) {
             PostHeaderImage(imageUrl = content.url)
         }
     }
-}
-
-@Composable
-fun TextContent(text: ContentText) {
-
 }
 
 private fun paragraphToAnnotatedString(
@@ -141,7 +133,7 @@ fun Markup.toAnnotatedStringItem(
 @Composable
 private fun PostHeaderImage(imageUrl: String) {
     val imageModifier = Modifier
-        .heightIn(min = 180.dp)
+        .height(240.dp)
         .fillMaxWidth()
     AsyncImage(
         model = imageUrl,

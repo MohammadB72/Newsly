@@ -1,0 +1,17 @@
+{
+  "httpStatusCode": 200,
+  "status": "SUCCESS",
+  "data": {
+    "id": 1541978,
+    "title": "Apple found to be infringing on AliveCor's patents",
+    "image": "https://digiato.com/wp-content/uploads/2022/12/Apple-Watch-ECG-910x600.jpg",
+    "date": "2022-12-12T21:30:10",
+    "author": {
+      "name": "Nafiseh Shahbazi",
+      "avatar": "https://digiato.com/wp-content/uploads/avatars/218286-142x142.jpeg"
+    },
+    "link": "https://digiato.com/article/2022/12/23/itc-apple-watch-infringed-alivecors-ecg-patent",
+    "content": [
+    ]
+  }
+}

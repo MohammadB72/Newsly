@@ -1,0 +1,17 @@
+{
+  "httpStatusCode": 200,
+  "status": "SUCCESS",
+  "data": {
+    "id": 1541900,
+    "title": "Introducing the best Android browsers",
+    "image": "https://digiato.com/wp-content/uploads/2022/12/0-9-910x600.jpg",
+    "date": "2022-12-12T21:30:10",
+    "author": {
+      "name": "Amir Hosseini",
+      "avatar": "https://digiato.com/wp-content/uploads/avatars/20493-142x142.jpg"
+    },
+    "link": "https://digiato.com/daily-timeline/page/2?skip=1542048",
+    "content": [
+    ]
+  }
+}
