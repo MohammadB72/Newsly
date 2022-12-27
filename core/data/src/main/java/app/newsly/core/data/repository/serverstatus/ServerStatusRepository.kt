@@ -1,8 +1,8 @@
-package app.newsly.core.network.datasource.server
+package app.newsly.core.data.repository.serverstatus
 
 import app.newsly.core.model.RequestResult
 import app.newsly.core.network.model.EmptyResponseApiModel
 
-interface RemoteDataSource {
+interface ServerStatusRepository {
     suspend fun getServerStatus(): RequestResult<EmptyResponseApiModel>
 }

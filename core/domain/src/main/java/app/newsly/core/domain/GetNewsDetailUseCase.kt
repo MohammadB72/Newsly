@@ -1,6 +1,6 @@
 package app.newsly.core.domain
 
-import app.newsly.core.data.repository.NewsRepository
+import app.newsly.core.data.repository.news.NewsRepository
 import app.newsly.core.domain.model.*
 import app.newsly.core.domain.model.enums.HeadlineType
 import app.newsly.core.domain.model.enums.MarkupType

@@ -1,4 +1,4 @@
-package app.newsly.core.network.datasource.server
+package app.newsly.core.network.datasource.serverstatus
 
 import app.newsly.core.network.model.EmptyResponseApiModel
 import retrofit2.http.GET

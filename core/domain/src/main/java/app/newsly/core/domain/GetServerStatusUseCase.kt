@@ -1,6 +1,6 @@
 package app.newsly.core.domain
 
-import app.newsly.core.data.repository.ServerStatusRepository
+import app.newsly.core.data.repository.serverstatus.ServerStatusRepository
 import app.newsly.core.domain.model.EmptyResponse
 import app.newsly.core.model.RequestResult
 import app.newsly.core.model.doOnFailure

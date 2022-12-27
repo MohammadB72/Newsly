@@ -1,6 +1,6 @@
 package app.newsly.core.domain
 
-import app.newsly.core.data.repository.NewsRepository
+import app.newsly.core.data.repository.news.NewsRepository
 import app.newsly.core.domain.model.Author
 import app.newsly.core.domain.model.News
 import app.newsly.core.model.RequestResult

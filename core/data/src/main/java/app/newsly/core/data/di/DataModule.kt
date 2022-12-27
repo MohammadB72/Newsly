@@ -1,9 +1,9 @@
 package app.newsly.core.data.di
 
-import app.newsly.core.data.repository.NewsRepository
-import app.newsly.core.data.repository.NewsRepositoryImp
-import app.newsly.core.data.repository.ServerStatusRepository
-import app.newsly.core.data.repository.ServerStatusRepositoryImp
+import app.newsly.core.data.repository.news.NewsRepository
+import app.newsly.core.data.repository.news.NewsRepositoryImp
+import app.newsly.core.data.repository.serverstatus.ServerStatusRepository
+import app.newsly.core.data.repository.serverstatus.ServerStatusRepositoryImp
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

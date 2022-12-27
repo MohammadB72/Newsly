@@ -1,4 +1,4 @@
-package app.newsly.core.data.repository
+package app.newsly.core.data.repository.news
 
 import app.newsly.core.model.RequestResult
 import app.newsly.core.network.datasource.news.NewsRemoteDataSource

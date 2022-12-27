@@ -3,7 +3,7 @@ package app.newsly.core.network.di
 import android.content.Context
 import app.newsly.ApiConfig
 import app.newsly.core.network.datasource.news.NewsApi
-import app.newsly.core.network.datasource.server.ServerStatusApi
+import app.newsly.core.network.datasource.serverstatus.ServerStatusApi
 import app.newsly.core.network.model.EmptyResponseConvertor
 import app.newsly.setEnvironment
 import dagger.Module
