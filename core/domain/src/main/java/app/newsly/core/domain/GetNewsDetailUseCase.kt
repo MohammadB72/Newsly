@@ -2,12 +2,15 @@ package app.newsly.core.domain
 
 import app.newsly.core.data.repository.NewsRepository
 import app.newsly.core.domain.model.*
+import app.newsly.core.domain.model.enums.HeadlineType
 import app.newsly.core.domain.model.enums.MarkupType
 import app.newsly.core.model.RequestResult
 import app.newsly.core.model.doOnFailure
 import app.newsly.core.model.doOnLoading
 import app.newsly.core.model.doOnSuccess
+import app.newsly.core.network.BuildConfig
 import app.newsly.core.network.model.ContentItemApiModel
+import app.newsly.core.network.model.NewsDetailApiModel
 import app.newsly.core.network.model.enums.ContentType
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -23,20 +26,7 @@ class GetNewsDetailUseCase @Inject constructor(
                 .getNewsDetail(postId = postId)
                 .doOnLoading { emit(RequestResult.Loading) }
                 .doOnSuccess { newsDetailApiModel ->
-                    val contentList = newsDetailApiModel.contentItems?.filter {
-                        it.hasValidContent
-                    }
-                    if (contentList != null) {
-                        emit(
-                            RequestResult.Success(
-                                NewsDetail(
-                                    id = newsDetailApiModel.id ?: -1,
-                                    imageUrl = newsDetailApiModel.imageUrl ?: "",
-                                    content = contentList.toDomainContentList()
-                                )
-                            )
-                        )
-                    }
+                    emit(RequestResult.Success(newsDetailApiModel.toNewsDetail()))
                 }
                 .doOnFailure { exception ->
                     emit(RequestResult.Fail(exception))
@@ -44,34 +34,31 @@ class GetNewsDetailUseCase @Inject constructor(
         }
     }
 
-    private fun ContentItemApiModel.doOnTextContent(
-        action: (
-            markupType: MarkupType,
-            text: String,
-            href: String?
-        ) -> Unit
-    ): ContentItemApiModel {
-        this.type?.let { type ->
-            if (type == ContentType.TEXT && this.text != null) {
-                action.invoke(MarkupType.Simple, this.text!!, null)
-            } else if (type == ContentType.TEXT_BOLD && this.text != null) {
-                action.invoke(MarkupType.Bold, this.text!!, null)
-            } else if (type == ContentType.LINK && this.text != null && this.href != null) {
-                action.invoke(MarkupType.Link, this.text!!, this.href!!)
+    private fun NewsDetailApiModel.toNewsDetail(): NewsDetail {
+        val apiContentList = this.apiContentList?.filter {
+            if (BuildConfig.FLAVOR == BuildConfig.MOCK || BuildConfig.FLAVOR == BuildConfig.DEVELOPMENT) {
+                true
+            } else {
+                it.hasValidContent
             }
         }
-        return this
+
+        return NewsDetail(
+            id = this.apiId ?: -1,
+            title = this.apiTitle ?: "",
+            imageUrl = this.apiImageUrl,
+            author = Author(
+                name = this.apiAuthor?.apiName ?: "",
+                avatar = this.apiAuthor?.apiAvatar ?: ""
+            ),
+            date = this.apiDate ?: "",
+            link = this.apiLink ?: "",
+            contentList = apiContentList?.toContentList() ?: emptyList()
+        )
     }
 
-    private fun ContentItemApiModel.doOnOtherContent(action: (ContentItemApiModel) -> Unit): Unit {
-        this.type?.let { type ->
-            if (type != ContentType.TEXT && type != ContentType.TEXT_BOLD && type != ContentType.LINK)
-                action(this)
-        }
-    }
-
-    private fun List<ContentItemApiModel>.toDomainContentList(): ArrayList<Content> {
-        val newContentList = ArrayList<Content>()
+    private fun List<ContentItemApiModel>.toContentList(): ArrayList<ContentItem> {
+        val newContentListItem = ArrayList<ContentItem>()
         var paragraphText = ""
         val markups = ArrayList<Markup>()
         this.forEach { content ->
@@ -84,80 +71,60 @@ class GetNewsDetailUseCase @Inject constructor(
                         href = href
                     )
                     paragraphText += text
-                }.doOnOtherContent {
-                    if (paragraphText.isNotBlank() && markups.isNotEmpty()) {
-                        newContentList.add(
-                            ContentText(
-                                text = paragraphText,
-                                markups = markups.toMutableList()
+                }
+                .doOnOtherContent {
+                    newContentListItem.addTextContent(
+                        text = paragraphText,
+                        markups = markups,
+                        contentSuccessfullyAdded = {
+                            paragraphText = ""
+                            markups.clear()
+                        })
+                    if (content.apiType == ContentType.IMAGE) {
+                        newContentListItem.add(ContentItemImage(url = content.apiHref ?: ""))
+                    } else if (content.apiType == ContentType.H1) {
+                        newContentListItem.add(
+                            ContentItemTextHeadline(
+                                type = HeadlineType.H1,
+                                text = content.apiText ?: ""
                             )
                         )
-                        paragraphText = ""
-                        markups.clear()
-                    }
-                    if (content.type == ContentType.IMAGE) {
-                        newContentList.add(ContentImage(url = content.href ?: ""))
-                    } else if (content.type == ContentType.H1) {
-                        newContentList.add(ContentTextH1(text = content.text ?: ""))
-                    }
-                }
-
-            /*if (content.type == ContentType.TEXT) {
-                content.text?.let {
-                    markups.addAsSimpleMarkUp(
-                        start = paragraphText.length,
-                        end = paragraphText.length + it.length
-                    )
-                    paragraphText += it
-                }
-            } else if (content.type == ContentType.TEXT_BOLD) {
-                content.text?.let {
-                    markups.addAsBoldMarkUp(
-                        start = paragraphText.length,
-                        end = paragraphText.length + it.length
-                    )
-                    paragraphText += it
-                }
-            } else if (content.type == ContentType.LINK) {
-                val text = content.text
-                val link = content.href
-                if (text != null && link != null) {
-                    markups.addAsLinkMarkUp(
-                        start = paragraphText.length,
-                        end = paragraphText.length + text.length,
-                        href = link
-                    )
-                    paragraphText += text
-                }
-            } else {
-                if (paragraphText.isNotBlank() && markups.isNotEmpty()) {
-                    newContentList.add(
-                        ContentText(
-                            text = paragraphText,
-                            markups = markups.toMutableList()
+                    } else if (content.apiType == ContentType.H2) {
+                        newContentListItem.add(
+                            ContentItemTextHeadline(
+                                type = HeadlineType.H2,
+                                text = content.apiText ?: ""
+                            )
                         )
-                    )
-                    paragraphText = ""
-                    markups.clear()
+                    } else {
+                        newContentListItem.add(
+                            ContentItemUnknown(
+                                type = content.apiType.toString(),
+                                attr = content.apiAttr
+                            )
+                        )
+                    }
                 }
-                if (content.type == ContentType.IMAGE) {
-                    newContentList.add(ContentImage(url = content.href ?: ""))
-                } else if (content.type == ContentType.H1) {
-                    newContentList.add(ContentTextH1(text = content.text ?: ""))
-                }
-            }*/
         }
-        if (paragraphText.isNotBlank() && markups.isNotEmpty()) {
-            newContentList.add(
-                ContentText(
-                    text = paragraphText,
-                    markups = markups.toMutableList()
-                )
-            )
-            paragraphText = ""
-            markups.clear()
+        newContentListItem.addTextContent(
+            text = paragraphText,
+            markups = markups,
+            contentSuccessfullyAdded = {
+                paragraphText = ""
+                markups.clear()
+            })
+        return newContentListItem
+    }
+
+    private fun ArrayList<ContentItem>.addTextContent(
+        text: String,
+        markups: List<Markup>,
+        contentSuccessfullyAdded: () -> Unit
+    ) {
+        if (text.isNotBlank() && markups.isNotEmpty()) {
+            this.add(ContentItemText(text = text, markups = markups.toMutableList()))
+            contentSuccessfullyAdded()
         }
-        return newContentList
     }
 
     private fun ArrayList<Markup>.addMarkUp(
@@ -174,5 +141,28 @@ class GetNewsDetailUseCase @Inject constructor(
                 href = href
             )
         )
+    }
+
+    private fun ContentItemApiModel.doOnTextContent(
+        action: (
+            markupType: MarkupType,
+            text: String,
+            href: String?
+        ) -> Unit
+    ): ContentItemApiModel {
+        if (apiType == ContentType.TEXT && this.apiText != null) {
+            action.invoke(MarkupType.TEXT, this.apiText!!, null)
+        } else if (apiType == ContentType.BOLD && this.apiText != null) {
+            action.invoke(MarkupType.BOLD, this.apiText!!, null)
+        } else if (apiType == ContentType.LINK && this.apiText != null && this.apiHref != null) {
+            action.invoke(MarkupType.LINK, this.apiText!!, this.apiHref)
+        }
+        return this
+    }
+
+    private fun ContentItemApiModel.doOnOtherContent(action: (ContentItemApiModel) -> Unit) {
+        if (apiType != ContentType.TEXT && apiType != ContentType.BOLD && apiType != ContentType.LINK) {
+            action(this)
+        }
     }
 }

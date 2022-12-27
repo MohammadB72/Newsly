@@ -3,8 +3,9 @@ package app.newsly.core.network.retrofit
 import android.content.Context
 import app.newsly.core.model.RequestException
 import app.newsly.core.model.RequestResult
+import app.newsly.core.network.BuildConfig
 import app.newsly.core.network.util.isNetworkConnected
-import app.newsly.shared.resources.BuildConfig
+
 import app.newsly.shared.resources.R
 import com.google.gson.Gson
 import kotlinx.coroutines.delay
@@ -17,7 +18,7 @@ suspend fun <T> apiCall(
 ): RequestResult<T> {
     if (context.isNetworkConnected) {
         runCatching {
-            if (BuildConfig.FLAVOR.equals("mock", ignoreCase = true)) {
+            if (BuildConfig.FLAVOR.equals(BuildConfig.MOCK, ignoreCase = true)) {
                 delay(1000)
             }
             block()

@@ -26,12 +26,15 @@ class GetNewsUseCase @Inject constructor(
                     emit(RequestResult.Success(
                         data.map {
                             News(
-                                id = it.id ?: -1,
-                                title = it.title ?: "",
-                                image = it.image ?: "",
-                                author = Author(it.author?.name ?: "", it.author?.avatar ?: ""),
-                                date = it.date?.toDate()?.differenceWithToday() ?: "",
-                                link = it.link ?: ""
+                                id = it.apiId ?: -1,
+                                title = it.apiTitle ?: "",
+                                image = it.apiImageUrl ?: "",
+                                author = Author(
+                                    it.apiAuthor?.apiName ?: "",
+                                    it.apiAuthor?.apiAvatar ?: ""
+                                ),
+                                date = it.apiDate?.toDate()?.differenceWithToday() ?: "",
+                                link = it.apiLink ?: ""
                             )
                         }
                     ))

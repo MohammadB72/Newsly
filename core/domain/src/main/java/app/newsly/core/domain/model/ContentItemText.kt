@@ -1,6 +1,6 @@
 package app.newsly.core.domain.model
 
-data class ContentText(
+data class ContentItemText(
     val text: String,
     var markups: List<Markup> = emptyList()
-) : Content
+) : ContentItem

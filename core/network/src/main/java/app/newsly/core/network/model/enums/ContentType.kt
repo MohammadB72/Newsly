@@ -1,5 +1,10 @@
 package app.newsly.core.network.model.enums
 
-enum class ContentType {
-    TEXT, IMAGE, LINK, TEXT_BOLD, H1
+object ContentType {
+    val TEXT = "text"
+    val IMAGE = "image"
+    val LINK = "link"
+    val BOLD = "bold"
+    val H1 = "h1"
+    val H2 = "h2"
 }

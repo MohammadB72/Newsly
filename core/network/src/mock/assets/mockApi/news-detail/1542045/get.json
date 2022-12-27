@@ -4,7 +4,7 @@
   "data": {
     "id": 1542045,
     "title": "NASA Image of the Day: Cassini among Saturn and its rings",
-    "image": "https://digiato.com/wp-content/uploads/2022/12/SaturnInsideOut2_cassini_960.jpg",
+    "image_url": "https://digiato.com/wp-content/uploads/2022/12/SaturnInsideOut2_cassini_960.jpg",
     "date": "2022-12-23T03:08:10",
     "author": {
       "name": "Mahdis Nasiri",
@@ -13,31 +13,31 @@
     "link": "https://digiato.com/article/2022/12/23/cassini-looks-out-from-saturn-apod",
     "content": [
       {
-        "type": "TEXT",
+        "type": "text",
         "attr": {
           "text": "\nToday's NASA image shows a view of Saturn that seems to have been taken from inside the planet's rings.\n\n"
         }
       },
       {
-        "type": "H2",
+        "type": "h2",
         "attr": {
           "text": "What do we see in today's NASA image?"
         }
       },
       {
-        "type": "TEXT",
+        "type": "text",
         "attr": {
           "text": "\n\nFor the first time in 2017, NASA steered the Cassini spacecraft so that it passed between Saturn and its rings. Over the course of the mission, the Cassini spacecraft took hundreds of images in unprecedented detail that provide a wealth of information about the structure of Saturn's atmosphere. Among the photos taken, there are amazing and impressive images.\n\nIn today's NASA image taken from the closest distance of Saturn, a strange hexagon can be seen in the north pole of the planet.\n\n"
         }
       },
       {
-        "type": "IMAGE",
+        "type": "image",
         "attr": {
           "href": "https://digiato.com/wp-content/uploads/2022/12/SaturnInsideOut2_cassini_960.jpg"
         }
       },
       {
-        "type": "TEXT",
+        "type": "text",
         "attr": {
           "text": "\n\nSaturn's B ring is the closest visible ring. While Cassini separates the dark part of B from A, which is the outer ring, in this image, on closer inspection, two small moons can be found surrounding the F ring (the farthest detectable ring).\n\nA few months after Taking this image and after more than a decade of research and exploration, the Cassini spacecraft headed for a glorious end to burn up in Saturn's atmosphere.\n"
         }

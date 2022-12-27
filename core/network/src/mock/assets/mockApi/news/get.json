@@ -5,7 +5,7 @@
     {
       "id": 1542045,
       "title": "NASA Image of the Day: Cassini among Saturn and its rings",
-      "image": "https://digiato.com/wp-content/uploads/2022/12/SaturnInsideOut2_cassini_960.jpg",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/SaturnInsideOut2_cassini_960.jpg",
       "date": "2022-12-23T03:08:10",
       "author": {
         "name": "Mahdis Nasiri",
@@ -16,7 +16,7 @@
     {
       "id": 1542048,
       "title": "Twitter Blue users can now upload 60-minute videos",
-      "image": "https://digiato.com/wp-content/uploads/2022/12/Twitter-Blue-2-910x600.jpg",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Twitter-Blue-2-910x600.jpg",
       "date": "2022-12-23T02:30:19",
       "author": {
         "name": "Mohammad Qureshi",
@@ -27,7 +27,7 @@
     {
       "id": 1541959,
       "title": "Google will add a new testing layer to Chrome updates next year",
-      "image": "https://digiato.com/wp-content/uploads/2022/12/Chrome-1-910x600.jpg",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Chrome-1-910x600.jpg",
       "date": "2022-12-22T21:30:09",
       "author": {
         "name": "Yunes Moradi",
@@ -38,7 +38,7 @@
     {
       "id": 1541978,
       "title": "Apple found to be infringing on AliveCor's patents",
-      "image": "https://digiato.com/wp-content/uploads/2022/12/Apple-Watch-ECG-910x600.jpg",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Apple-Watch-ECG-910x600.jpg",
       "date": "2022-12-12T21:30:10",
       "author": {
         "name": "Nafiseh Shahbazi",
@@ -49,7 +49,7 @@
     {
       "id": 1541967,
       "title": "Disclosing the roadmap of pixel products",
-      "image": "https://digiato.com/wp-content/uploads/2022/12/Google-Pixel-Phone-910x600.jpg",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Google-Pixel-Phone-910x600.jpg",
       "date": "2022-12-12T21:30:10",
       "author": {
         "name": "Saba Selouki",
@@ -60,7 +60,7 @@
     {
       "id": 1541751,
       "title": "Chery electric flagship is introduced",
-      "image": "https://digiato.com/wp-content/uploads/2022/12/Chery-eQ7-Teaser-1_result_1-910x600.jpg",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Chery-eQ7-Teaser-1_result_1-910x600.jpg",
       "date": "2022-12-12T21:30:10",
       "author": {
         "name": "Saeed Alipour",
@@ -71,7 +71,7 @@
     {
       "id": 1541955,
       "title": "Continued retrenchment on Twitter",
-      "image": "https://digiato.com/wp-content/uploads/2022/12/Twitter-Exit-910x600.jpg",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Twitter-Exit-910x600.jpg",
       "date": "2022-12-12T21:30:10",
       "author": {
         "name": "Javad Taji",
@@ -82,7 +82,7 @@
     {
       "id": 1541948,
       "title": "LastPass: Hackers have stolen users' encrypted data",
-      "image": "https://digiato.com/wp-content/uploads/2022/12/LastPass-910x600.jpg",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/LastPass-910x600.jpg",
       "date": "2022-12-12T21:30:10",
       "author": {
         "name": "Mohammad Qureshi",
@@ -93,7 +93,7 @@
     {
       "id": 1541900,
       "title": "Introducing the best Android browsers",
-      "image": "https://digiato.com/wp-content/uploads/2022/12/0-9-910x600.jpg",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/0-9-910x600.jpg",
       "date": "2022-12-12T21:30:10",
       "author": {
         "name": "Amir Hosseini",
@@ -104,7 +104,7 @@
     {
       "id": 1541847,
       "title": "Bill Gates: Elon Musk makes random decisions on Twitter",
-      "image": "https://digiato.com/wp-content/uploads/2022/12/Bill-Gates-Elon-Musk-910x600.jpg",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Bill-Gates-Elon-Musk-910x600.jpg",
       "date": "2022-12-12T21:30:10",
       "author": {
         "name": "Zahra Maleki",

@@ -1,5 +1,5 @@
 package app.newsly.core.domain.model
 
-data class ContentImage(
+data class ContentItemImage(
     val url: String,
-) : Content
+) : ContentItem

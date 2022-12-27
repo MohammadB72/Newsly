@@ -7,6 +7,12 @@ plugins {
 android {
     namespace = "app.newsly.core.network"
 
+    defaultConfig {
+        buildConfigField("String", "MOCK", "\"${flavor.MockFlavor.name}\"")
+        buildConfigField("String", "DEVELOPMENT", "\"${flavor.DevelopmentFlavor.name}\"")
+        buildConfigField("String", "PRODUCTION", "\"${flavor.ProductionFlavor.name}\"")
+    }
+
     flavorDimensions += flavor.dimension.FlavorDimension.MODE.value
     productFlavors {
         create(flavor.MockFlavor.name) {
