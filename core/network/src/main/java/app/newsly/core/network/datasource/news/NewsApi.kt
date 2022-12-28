@@ -1,5 +1,6 @@
 package app.newsly.core.network.datasource.news
 
+import app.newsly.core.network.model.CategoriesApiModel
 import app.newsly.core.network.model.NewsApiModel
 import app.newsly.core.network.model.NewsDetailApiModel
 import app.newsly.core.network.retrofit.NetworkResponse
@@ -13,4 +14,7 @@ interface NewsApi {
 
     @GET(value = "news-detail/{post_id}")
     suspend fun getNewsDetail(@Path("post_id") postId: Int): NetworkResponse<NewsDetailApiModel>
+
+    @GET(value = "categories")
+    suspend fun getCategories(): NetworkResponse<List<CategoriesApiModel>>
 }

@@ -2,6 +2,7 @@ package app.newsly.core.network.datasource.news
 
 import android.content.Context
 import app.newsly.core.model.RequestResult
+import app.newsly.core.network.model.CategoriesApiModel
 import app.newsly.core.network.model.NewsApiModel
 import app.newsly.core.network.model.NewsDetailApiModel
 import app.newsly.core.network.retrofit.apiCall
@@ -23,5 +24,11 @@ class NewsRemoteDataSourceImp @Inject constructor(
         apiCall(
             context = context,
             block = { newsApi.getNewsDetail(postId = postId).data }
+        )
+
+    override suspend fun getCategories(): RequestResult<List<CategoriesApiModel>> =
+        apiCall(
+            context = context,
+            block = { newsApi.getCategories().data }
         )
 }

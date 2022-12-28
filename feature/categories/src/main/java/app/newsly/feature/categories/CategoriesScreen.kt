@@ -6,9 +6,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
-internal fun CategoriesRoute() {
+internal fun CategoriesRoute(
+    viewModel: CategoriesViewModel = hiltViewModel()
+) {
     CategoriesScreen()
 }
 
@@ -16,6 +19,5 @@ internal fun CategoriesRoute() {
 fun CategoriesScreen() {
     Box(modifier = Modifier.fillMaxSize()) {
         Text(modifier = Modifier.fillMaxSize(), text = "Categories", textAlign = TextAlign.Center)
-
     }
 }
