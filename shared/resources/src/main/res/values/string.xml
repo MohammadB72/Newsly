@@ -3,7 +3,6 @@
     <string name="app_name">Newsly</string>
 
     <string name="news">News</string>
-    <string name="editor_choice">Editor Choice</string>
     <string name="categories">Categories</string>
     <string name="apps">Apps</string>
     <string name="retry">Retry</string>

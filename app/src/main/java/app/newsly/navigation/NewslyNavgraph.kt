@@ -1,4 +1,4 @@
-package app.newsly.ui
+package app.newsly.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -36,6 +36,6 @@ fun NewslyNavgraph(
             onPostTapped = { postId -> navController.navigateToNewsDetail(postId = postId) },
             onFailureOccurred = onFailureOccurred
         )
-        newsDetailScreen()
+        newsDetailScreen(onFailureOccurred = onFailureOccurred)
     }
 }

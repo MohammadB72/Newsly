@@ -10,8 +10,8 @@ import androidx.compose.runtime.remember
 import androidx.core.view.WindowCompat
 import app.newsly.core.designsystem.theme.NewslyTheme
 import app.newsly.core.model.FailureAction
+import app.newsly.navigation.NewslyNavgraph
 import app.newsly.shared.resources.R
-import app.newsly.ui.NewslyNavgraph
 import dagger.hilt.android.AndroidEntryPoint
 
 

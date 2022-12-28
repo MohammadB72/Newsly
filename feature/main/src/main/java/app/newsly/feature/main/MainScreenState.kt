@@ -11,8 +11,6 @@ import app.newsly.feature.apps.navigation.appsNavigationRoute
 import app.newsly.feature.apps.navigation.navigateToApps
 import app.newsly.feature.categories.navigation.categoriesNavigationRoute
 import app.newsly.feature.categories.navigation.navigateToCategories
-import app.newsly.feature.editorchoice.navigation.editorChoiceNavigationRoute
-import app.newsly.feature.editorchoice.navigation.navigateToEditorChoice
 import app.newsly.feature.main.navigation.TopLevelDestination
 import app.newsly.feature.news.navigation.navigateToNews
 import app.newsly.feature.news.navigation.newsNavigationRoute
@@ -36,7 +34,6 @@ class MainScreenState(
     val currentDestination: TopLevelDestination?
         @Composable get() = when (navController.currentBackStackEntryAsState().value?.destination?.route) {
             newsNavigationRoute -> TopLevelDestination.NEWS
-            editorChoiceNavigationRoute -> TopLevelDestination.EDITOR_CHOICE
             categoriesNavigationRoute -> TopLevelDestination.CATEGORIES
             appsNavigationRoute -> TopLevelDestination.Apps
             else -> null
@@ -56,9 +53,6 @@ class MainScreenState(
         when (topLevelDestination) {
             TopLevelDestination.NEWS -> {
                 navController.navigateToNews(topLevelNavOptions)
-            }
-            TopLevelDestination.EDITOR_CHOICE -> {
-                navController.navigateToEditorChoice(topLevelNavOptions)
             }
             TopLevelDestination.CATEGORIES -> {
                 navController.navigateToCategories(topLevelNavOptions)

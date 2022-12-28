@@ -16,19 +16,14 @@ enum class TopLevelDestination(
         unselectedIcon = ImageVectorIcon(NewslyIcons.NewsBorder),
         titleTextId = R.string.news
     ),
-    EDITOR_CHOICE(
-        selectedIcon = ImageVectorIcon(NewslyIcons.EditorChoice),
-        unselectedIcon = ImageVectorIcon(NewslyIcons.EditorChoiceBorder),
-        titleTextId = R.string.editor_choice
-    ),
     CATEGORIES(
         selectedIcon = ImageVectorIcon(NewslyIcons.Categories),
         unselectedIcon = ImageVectorIcon(NewslyIcons.CategoriesBorder),
         titleTextId = R.string.categories
     ),
     Apps(
-        selectedIcon = ImageVectorIcon(NewslyIcons.Apps),
-        unselectedIcon = ImageVectorIcon(NewslyIcons.AppsBorder),
+        selectedIcon = ImageVectorIcon(NewslyIcons.Star),
+        unselectedIcon = ImageVectorIcon(NewslyIcons.StarBorder),
         titleTextId = R.string.apps
     )
 }

@@ -39,7 +39,11 @@ class NewsDetailViewModel @Inject constructor(
                             NewsDetailUiState.Success(result.data)
                         }
                         is RequestResult.Fail -> {
-                            NewsDetailUiState.Failure(result.exception)
+                            NewsDetailUiState.Failure(result.exception.copy(retryBlock = {
+                                getNewsDetail(
+                                    postId
+                                )
+                            }))
                         }
                     }
             }

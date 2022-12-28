@@ -1,7 +1,9 @@
 package app.newsly.feature.newsdetail.navigation
 
+import androidx.compose.runtime.Composable
 import androidx.navigation.*
 import androidx.navigation.compose.composable
+import app.newsly.core.model.RequestException
 import app.newsly.feature.newsdetail.NewsDetailRoute
 
 
@@ -12,7 +14,9 @@ fun NavController.navigateToNewsDetail(postId: Int, navOptions: NavOptions? = nu
     this.navigate("news_detail_route?postId=$postId", navOptions)
 }
 
-fun NavGraphBuilder.newsDetailScreen() {
+fun NavGraphBuilder.newsDetailScreen(
+    onFailureOccurred: @Composable (RequestException) -> Unit,
+) {
     composable(
         route = newsDetailNavigationRoute,
         arguments = listOf(navArgument(postIdArgs) {
@@ -20,6 +24,6 @@ fun NavGraphBuilder.newsDetailScreen() {
             defaultValue = ""
         })
     ) {
-        NewsDetailRoute()
+        NewsDetailRoute(onFailureOccurred = onFailureOccurred)
     }
 }

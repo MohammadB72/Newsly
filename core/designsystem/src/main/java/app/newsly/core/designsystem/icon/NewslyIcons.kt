@@ -13,8 +13,8 @@ object NewslyIcons {
     val News = Icons.Rounded.Newspaper
     val NewsBorder = Icons.Outlined.Newspaper
 
-    val EditorChoice = Icons.Rounded.Star
-    val EditorChoiceBorder = Icons.Outlined.Star
+    val Star = Icons.Rounded.Star
+    val StarBorder = Icons.Outlined.Star
 
     val Categories = Icons.Rounded.Category
     val CategoriesBorder = Icons.Outlined.Category

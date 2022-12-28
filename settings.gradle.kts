@@ -17,7 +17,6 @@ include(":app")
 
 include(":feature:splash")
 include(":feature:news")
-include(":feature:editorchoice")
 include(":feature:categories")
 include(":feature:apps")
 include(":feature:main")

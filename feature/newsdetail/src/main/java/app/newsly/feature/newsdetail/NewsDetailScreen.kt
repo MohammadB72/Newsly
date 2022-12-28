@@ -5,15 +5,15 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.material3.Typography
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -33,32 +33,39 @@ private val defaultSpacerSize = 16.dp
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
 fun NewsDetailRoute(
+    onFailureOccurred: @Composable (RequestException) -> Unit,
     viewModel: NewsDetailViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.newsDetailUiState.collectAsStateWithLifecycle()
-    NewsDetailScreen(uiState = uiState)
+    NewsDetailScreen(uiState = uiState, onFailureOccurred = onFailureOccurred)
 }
 
 @Composable
 fun NewsDetailScreen(
     uiState: NewsDetailUiState,
+    onFailureOccurred: @Composable (RequestException) -> Unit
 ) {
-    when (uiState) {
-        NewsDetailUiState.Loading -> {
-            LoadingContent()
-        }
-        is NewsDetailUiState.Success -> {
-            SuccessContent(uiState.newsDetail)
-        }
-        is NewsDetailUiState.Failure -> {
-            FailureContent(uiState.exception)
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        when (uiState) {
+            NewsDetailUiState.Loading -> {
+                LoadingContent()
+            }
+            is NewsDetailUiState.Success -> {
+                SuccessContent(uiState.newsDetail)
+            }
+            is NewsDetailUiState.Failure -> {
+                FailureContent(exception = uiState.exception, onFailureOccurred = onFailureOccurred)
+            }
         }
     }
 }
 
 @Composable
 fun LoadingContent() {
-
+    CircularProgressIndicator()
 }
 
 @Composable
@@ -79,6 +86,17 @@ fun SuccessContent(newsDetail: NewsDetail) {
 }
 
 @Composable
+fun FailureContent(
+    exception: RequestException,
+    onFailureOccurred: @Composable (RequestException) -> Unit,
+) {
+    onFailureOccurred(exception)
+    Button(onClick = { exception.retryBlock() }) {
+        Text(text = stringResource(id = R.string.retry))
+    }
+}
+
+@Composable
 fun Paragraph(contentItem: ContentItem) {
     when (contentItem) {
         is ContentItemText -> {
@@ -92,7 +110,7 @@ fun Paragraph(contentItem: ContentItem) {
             Text(text = contentItem.text, style = MaterialTheme.typography.headlineMedium)
         }
         is ContentItemImage -> {
-            PostHeaderImage(imageUrl = contentItem.url)
+            ContentImage(imageUrl = contentItem.url)
         }
         is ContentItemUnknown -> {
             Text(
@@ -159,18 +177,16 @@ private fun PostHeaderImage(imageUrl: String?) {
 }
 
 @Composable
-fun FailureContent(exception: RequestException) {
-    Column(modifier = Modifier.fillMaxSize()) {
-        Box(
-            Modifier
-                .fillMaxSize()
-                .padding(WindowInsets.statusBars.asPaddingValues())
-        ) {
-            LazyColumn(
-                modifier = Modifier,
-                state = rememberLazyListState()
-            ) {
-            }
-        }
-    }
+private fun ContentImage(imageUrl: String?) {
+    val imageModifier = Modifier
+        .height(240.dp)
+        .fillMaxWidth()
+    AsyncImage(
+        model = imageUrl,
+        contentDescription = null,
+        modifier = imageModifier,
+        contentScale = ContentScale.Crop,
+        error = painterResource(id = R.drawable.image_preview)
+    )
 }
+
