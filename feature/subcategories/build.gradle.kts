@@ -1,11 +1,11 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
 }
 
 android {
-    namespace = "app.newsly.core.designsystem"
-
+    namespace = "app.newsly.feature.subcategories"
     flavorDimensions += flavor.dimension.FlavorDimension.MODE.value
     productFlavors {
         create(flavor.MockFlavor.name) {
@@ -22,27 +22,22 @@ android {
     buildFeatures {
         compose = true
     }
-
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.composecompiler.get()
     }
 }
 
 dependencies {
+    implementation(project(":core:designsystem"))
+    implementation(project(":core:domain"))
+
     implementation(project(":shared:model"))
     implementation(project(":shared:resources"))
+    implementation(project(":shared:util"))
 
-    api(platform(libs.androidx.compose.bom))
-    api(libs.androidx.compose.ui.ui)
-    api(libs.androidx.compose.ui.tooling)
-    api(libs.androidx.compose.ui.tooling.preview)
-    api(libs.androidx.compose.ui.test.manifest)
-    api(libs.androidx.compose.material)
-    api(libs.androidx.compose.material3)
-    api(libs.google.android.material)
-    api(libs.androidx.compose.material.iconsExtended)
+    implementation(libs.androidx.lifecycle.runtimeCompose)
 
-    api(libs.coil)
-    api(libs.coil.compose)
-    api(libs.coil.svg)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 }

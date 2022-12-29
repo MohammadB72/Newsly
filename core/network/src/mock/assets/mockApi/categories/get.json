@@ -3,38 +3,38 @@
   "status": "SUCCESS",
   "data": [
     {
-      "id": 26,
-      "title": "تکنولوژی",
+      "id": 10,
+      "title": "Technology",
       "posts_count": 67796,
       "icon": "https://digiato.com/wp-content/uploads/2022/07/tech.svg"
     },
     {
-      "id": 172,
-      "title": "نقد و بررسی‌",
+      "id": 11,
+      "title": "Review",
       "posts_count": 729,
       "icon": "https://digiato.com/wp-content/uploads/2022/07/review.svg"
     },
     {
-      "id": 27433,
-      "title": "خودرو",
+      "id": 12,
+      "title": "Car",
       "posts_count": 10424,
       "icon": "https://digiato.com/wp-content/uploads/2022/07/car.svg"
     },
     {
-      "id": 30,
-      "title": "موبایل",
+      "id": 13,
+      "title": "Mobile",
       "posts_count": 15650,
       "icon": "https://digiato.com/wp-content/uploads/2022/07/Tips-Tricks-01.svg"
     },
     {
-      "id": 37,
-      "title": "علمی",
+      "id": 14,
+      "title": "Science",
       "posts_count": 11976,
       "icon": "https://digiato.com/wp-content/uploads/2022/07/science.svg"
     },
     {
-      "id": 27426,
-      "title": "کسب و کار",
+      "id": 15,
+      "title": "Business",
       "posts_count": 4301,
       "icon": "https://digiato.com/wp-content/uploads/2022/07/business.svg"
     }

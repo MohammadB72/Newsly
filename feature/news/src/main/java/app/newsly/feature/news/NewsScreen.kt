@@ -28,16 +28,16 @@ internal fun NewsRoute(
 ) {
     val uiState by viewModel.newsUiState.collectAsStateWithLifecycle()
     NewsScreen(
-        onPostTapped = onPostTapped,
         uiState = uiState,
+        onPostTapped = onPostTapped,
         onFailureOccurred = onFailureOccurred
     )
 }
 
 @Composable
 fun NewsScreen(
-    onPostTapped: (postId: Int) -> Unit,
     uiState: NewsUiState,
+    onPostTapped: (postId: Int) -> Unit,
     onFailureOccurred: @Composable (RequestException) -> Unit
 ) {
     Box(

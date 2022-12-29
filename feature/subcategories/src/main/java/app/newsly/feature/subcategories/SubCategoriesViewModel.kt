@@ -1,11 +1,11 @@
-package app.newsly.feature.newsdetail
+package app.newsly.feature.subcategories
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import app.newsly.core.domain.GetNewsDetailUseCase
+import app.newsly.core.domain.GetSubCategoriesUseCase
 import app.newsly.core.model.RequestResult
-import app.newsly.feature.newsdetail.navigation.postIdArgs
+import app.newsly.feature.subcategories.navigation.categoryIdArgs
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -13,35 +13,35 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class NewsDetailViewModel @Inject constructor(
+class SubCategoriesViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    private val getNewsDetailUseCase: GetNewsDetailUseCase,
+    private val getSubCategoriesUseCase: GetSubCategoriesUseCase,
 ) : ViewModel() {
 
-    private val postId = savedStateHandle.get<Int>(postIdArgs)
+    private val categoryId = savedStateHandle.get<Int>(categoryIdArgs)
 
-    private val _uiState = MutableStateFlow<NewsDetailUiState>(NewsDetailUiState.Loading)
+    private val _uiState = MutableStateFlow<SubCategoriesUiState>(SubCategoriesUiState.Loading)
     val uiState = _uiState.asStateFlow()
 
     init {
-        postId?.let { getNewsDetail(it) }
+        categoryId?.let { getSubCategories(it) }
     }
 
-    private fun getNewsDetail(postId: Int) {
+    private fun getSubCategories(categoryId: Int) {
         viewModelScope.launch {
-            getNewsDetailUseCase.invoke(postId = postId).collect { result ->
+            getSubCategoriesUseCase.invoke(categoryId = categoryId).collect() { result ->
                 _uiState.value =
                     when (result) {
                         is RequestResult.Loading -> {
-                            NewsDetailUiState.Loading
+                            SubCategoriesUiState.Loading
                         }
                         is RequestResult.Success -> {
-                            NewsDetailUiState.Success(result.data)
+                            SubCategoriesUiState.Success(result.data)
                         }
                         is RequestResult.Fail -> {
-                            NewsDetailUiState.Failure(result.exception.copy(retryBlock = {
-                                getNewsDetail(
-                                    postId
+                            SubCategoriesUiState.Failure(result.exception.copy(retryBlock = {
+                                getSubCategories(
+                                    categoryId
                                 )
                             }))
                         }

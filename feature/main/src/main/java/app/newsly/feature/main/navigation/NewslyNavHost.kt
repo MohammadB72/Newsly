@@ -15,6 +15,7 @@ import app.newsly.feature.news.navigation.newsScreen
 fun NewslyNavHost(
     modifier: Modifier = Modifier,
     onPostTapped: (postId: Int) -> Unit,
+    onCategoryTapped: (categoryId: Int) -> Unit,
     onFailureOccurred: @Composable (RequestException) -> Unit,
     navController: NavHostController
 ) {
@@ -27,7 +28,10 @@ fun NewslyNavHost(
             onPostTapped = onPostTapped,
             onFailureOccurred = onFailureOccurred
         )
-        categoriesScreen()
+        categoriesScreen(
+            onCategoryTapped = onCategoryTapped,
+            onFailureOccurred = onFailureOccurred
+        )
         appsScreen()
 
     }

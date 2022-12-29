@@ -30,6 +30,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun MainRoute(
     onPostTapped: (postId: Int) -> Unit,
+    onCategoryTapped: (categoryId: Int) -> Unit,
     onFailureOccurred: @Composable (RequestException) -> Unit,
     mainScreenState: MainScreenState = rememberMainScreenState()
 ) {
@@ -51,6 +52,7 @@ fun MainRoute(
             sheetState = sheetState,
             coroutineScope = coroutineScope,
             onPostTapped = onPostTapped,
+            onCategoryTapped = onCategoryTapped,
             onFailureOccurred = onFailureOccurred
         )
     }
@@ -63,6 +65,7 @@ fun MainScreen(
     sheetState: ModalBottomSheetState,
     coroutineScope: CoroutineScope,
     onPostTapped: (postId: Int) -> Unit,
+    onCategoryTapped: (categoryId: Int) -> Unit,
     onFailureOccurred: @Composable (RequestException) -> Unit,
 ) {
     val snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
@@ -89,6 +92,7 @@ fun MainScreen(
         NewslyNavHost(
             modifier = contentModifier,
             onPostTapped = onPostTapped,
+            onCategoryTapped = onCategoryTapped,
             onFailureOccurred = { exception ->
                 LaunchedEffect(snackbarHostState, exception.id)
                 {

@@ -36,7 +36,7 @@ fun NewsDetailRoute(
     onFailureOccurred: @Composable (RequestException) -> Unit,
     viewModel: NewsDetailViewModel = hiltViewModel()
 ) {
-    val uiState by viewModel.newsDetailUiState.collectAsStateWithLifecycle()
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     NewsDetailScreen(uiState = uiState, onFailureOccurred = onFailureOccurred)
 }
 

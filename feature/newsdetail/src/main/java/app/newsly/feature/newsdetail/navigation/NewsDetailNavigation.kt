@@ -7,11 +7,12 @@ import app.newsly.core.model.RequestException
 import app.newsly.feature.newsdetail.NewsDetailRoute
 
 
-internal const val postIdArgs = "topicId"
-const val newsDetailNavigationRoute = "news_detail_route?postId={$postIdArgs}"
+internal const val postIdArgs = "postId"
+const val newsDetailNavigationRoute = "news_detail_route?$postIdArgs={$postIdArgs}"
 
 fun NavController.navigateToNewsDetail(postId: Int, navOptions: NavOptions? = null) {
-    this.navigate("news_detail_route?postId=$postId", navOptions)
+    val address = newsDetailNavigationRoute.replace("{$postIdArgs}", "$postId")
+    this.navigate(address, navOptions)
 }
 
 fun NavGraphBuilder.newsDetailScreen(
@@ -20,8 +21,8 @@ fun NavGraphBuilder.newsDetailScreen(
     composable(
         route = newsDetailNavigationRoute,
         arguments = listOf(navArgument(postIdArgs) {
-            type = NavType.StringType
-            defaultValue = ""
+            type = NavType.IntType
+            defaultValue = 0
         })
     ) {
         NewsDetailRoute(onFailureOccurred = onFailureOccurred)

@@ -20,6 +20,7 @@ fun NavController.navigateToMainGraph(navOptions: NavOptions? = null) {
 
 fun NavGraphBuilder.mainGraph(
     onPostTapped: (postId: Int) -> Unit,
+    onCategoryTapped: (categoryId: Int) -> Unit,
     onFailureOccurred: @Composable (RequestException) -> Unit
 ) {
     navigation(
@@ -28,7 +29,11 @@ fun NavGraphBuilder.mainGraph(
     )
     {
         composable(route = mainRoute) {
-            MainRoute(onPostTapped = onPostTapped, onFailureOccurred = onFailureOccurred)
+            MainRoute(
+                onPostTapped = onPostTapped,
+                onCategoryTapped = onCategoryTapped,
+                onFailureOccurred = onFailureOccurred
+            )
         }
     }
 }

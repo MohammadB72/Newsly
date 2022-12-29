@@ -12,6 +12,8 @@ import app.newsly.feature.newsdetail.navigation.navigateToNewsDetail
 import app.newsly.feature.newsdetail.navigation.newsDetailScreen
 import app.newsly.feature.splashscreen.navigation.splashNavigationRoute
 import app.newsly.feature.splashscreen.navigation.splashScreen
+import app.newsly.feature.subcategories.navigation.navigateToSubCategories
+import app.newsly.feature.subcategories.navigation.subCategoriesScreen
 
 
 @Composable
@@ -34,8 +36,10 @@ fun NewslyNavgraph(
         )
         mainGraph(
             onPostTapped = { postId -> navController.navigateToNewsDetail(postId = postId) },
+            onCategoryTapped = { categoryId -> navController.navigateToSubCategories(categoryId = categoryId) },
             onFailureOccurred = onFailureOccurred
         )
         newsDetailScreen(onFailureOccurred = onFailureOccurred)
+        subCategoriesScreen(onFailureOccurred = onFailureOccurred)
     }
 }

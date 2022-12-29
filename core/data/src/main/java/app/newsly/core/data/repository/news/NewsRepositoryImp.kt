@@ -2,7 +2,7 @@ package app.newsly.core.data.repository.news
 
 import app.newsly.core.model.RequestResult
 import app.newsly.core.network.datasource.news.NewsRemoteDataSource
-import app.newsly.core.network.model.CategoriesApiModel
+import app.newsly.core.network.model.CategoryApiModel
 import app.newsly.core.network.model.NewsApiModel
 import app.newsly.core.network.model.NewsDetailApiModel
 import javax.inject.Inject
@@ -17,6 +17,9 @@ class NewsRepositoryImp @Inject constructor(
     override suspend fun getNewsDetail(postId: Int): RequestResult<NewsDetailApiModel> =
         newsRemoteDataSource.getNewsDetail(postId = postId)
 
-    override suspend fun getCategories(): RequestResult<List<CategoriesApiModel>> =
+    override suspend fun getCategories(): RequestResult<List<CategoryApiModel>> =
         newsRemoteDataSource.getCategories()
+
+    override suspend fun getSubCategories(categoryId: Int): RequestResult<List<CategoryApiModel>> =
+        newsRemoteDataSource.getSubCategories(categoryId = categoryId)
 }
