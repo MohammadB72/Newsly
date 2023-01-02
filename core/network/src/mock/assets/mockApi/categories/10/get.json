@@ -4,43 +4,43 @@
   "data": [
     {
       "id": 93022,
-      "title": "بررسی اسپیکر و هدفون",
+      "title": "Speakers",
       "posts_count": 27,
       "icon": ""
     },
     {
       "id": 93023,
-      "title": "بررسی پوشیدنی",
+      "title": "Wearable",
       "posts_count": 38,
       "icon": ""
     },
     {
       "id": 93020,
-      "title": "بررسی تبلت",
+      "title": "Tablet",
       "posts_count": 19,
       "icon": ""
     },
     {
       "id": 93021,
-      "title": "بررسی تلویزیون",
+      "title": "Tv",
       "posts_count": 22,
       "icon": ""
     },
     {
       "id": 93116,
-      "title": "بررسی سخت افزار",
+      "title": "Hardware",
       "posts_count": 70,
       "icon": ""
     },
     {
       "id": 93019,
-      "title": "بررسی لپ تاپ",
+      "title": "Laptop",
       "posts_count": 49,
       "icon": ""
     },
     {
       "id": 93018,
-      "title": "بررسی موبایل",
+      "title": "Mobile",
       "posts_count": 266,
       "icon": ""
     }

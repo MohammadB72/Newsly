@@ -14,10 +14,19 @@ class NewsRemoteDataSourceImp @Inject constructor(
     private val newsApi: NewsApi
 ) : NewsRemoteDataSource {
 
-    override suspend fun getNews(): RequestResult<List<NewsApiModel>> =
+    override suspend fun getNews(page: Int): RequestResult<List<NewsApiModel>> =
         apiCall(
             context = context,
-            block = { newsApi.getNews(page = 1).data }
+            block = { newsApi.getNews(page = page).data }
+        )
+
+    override suspend fun getNewsByCategory(
+        categoryId: Int,
+        page: Int
+    ): RequestResult<List<NewsApiModel>> =
+        apiCall(
+            context = context,
+            block = { newsApi.getNewsByCategory(categoryId = categoryId, page = 1).data }
         )
 
     override suspend fun getNewsDetail(postId: Int): RequestResult<NewsDetailApiModel> =

@@ -2,6 +2,7 @@
 compileSdk = "33"
 minSdk = "21"
 targetSdk = "33"
+accompanist = "0.28.0"
 androidGradlePlugin = "7.3.1"
 androidxActivity = "1.6.1"
 androidxCore = "1.9.0"
@@ -21,6 +22,8 @@ retrofit = "2.9.0"
 retrofitKotlinxSerializationJson = "0.8.0"
 
 [libraries]
+accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist" }
+accompanist-pager-indicators = { group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "accompanist" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivity" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
 androidx-compose-material = { group = "androidx.compose.material", name = "material" }

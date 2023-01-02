@@ -13,18 +13,17 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class GetNewsUseCase @Inject constructor(
+class GetNewsByCategoryUseCase @Inject constructor(
     private val newsRepository: NewsRepository
 ) {
-    operator fun invoke(): Flow<RequestResult<List<News>>> {
+    operator fun invoke(categoryId: Int, page: Int): Flow<RequestResult<List<News>>> {
         return flow {
             emit(RequestResult.Loading)
-            newsRepository
-                .getNews(page = 1)
+            newsRepository.getNewsByCategory(categoryId = categoryId, page = page)
                 .doOnLoading { emit(RequestResult.Loading) }
-                .doOnSuccess { data ->
+                .doOnSuccess { newsList ->
                     emit(RequestResult.Success(
-                        data.map {
+                        newsList.map {
                             News(
                                 id = it.apiId ?: -1,
                                 title = it.apiTitle ?: "",
@@ -33,15 +32,15 @@ class GetNewsUseCase @Inject constructor(
                                     it.apiAuthor?.apiName ?: "",
                                     it.apiAuthor?.apiAvatar ?: ""
                                 ),
-                                date = it.apiDate?.toDate()?.differenceWithToday() ?: "",
+                                date = it.apiDate?.toDate()?.differenceWithToday()
+                                    ?: "",
                                 link = it.apiLink ?: ""
                             )
                         }
                     ))
                 }
-                .doOnFailure { exception ->
-                    emit(RequestResult.Fail(exception))
-                }
+                .doOnFailure { }
         }
     }
 }
+

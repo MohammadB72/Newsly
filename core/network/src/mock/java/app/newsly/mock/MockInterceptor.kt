@@ -37,12 +37,12 @@ fun getResponse(context: Context, request: Request): String {
 
 fun getEndPoint(request: Request): String {
     val url = request.url.toString()
-    val queryParameterIndex = url.indexOf("?")
+        .replace("?", "/")
+        .replace("=", "/")
+        .replace("&", "/")
+    //val queryParameterIndex = url.indexOf("?")
     val startIndex = ApiConfig.BASE_URL.length
-    return when (queryParameterIndex) {
-        -1 -> url.substring(startIndex)
-        else -> url.substring(startIndex, queryParameterIndex)
-    }
+    return url.substring(startIndex)
 }
 
 data class HeaderResponse(

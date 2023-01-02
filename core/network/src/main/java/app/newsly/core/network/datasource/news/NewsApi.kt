@@ -12,6 +12,12 @@ interface NewsApi {
     @GET(value = "news")
     suspend fun getNews(@Query("page") page: Int): NetworkResponse<List<NewsApiModel>>
 
+    @GET(value = "news")
+    suspend fun getNewsByCategory(
+        @Query("category_id") categoryId: Int,
+        @Query("page") page: Int
+    ): NetworkResponse<List<NewsApiModel>>
+
     @GET(value = "news-detail/{post_id}")
     suspend fun getNewsDetail(@Path("post_id") postId: Int): NetworkResponse<NewsDetailApiModel>
 

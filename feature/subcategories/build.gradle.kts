@@ -36,6 +36,8 @@ dependencies {
     implementation(project(":shared:util"))
 
     implementation(libs.androidx.lifecycle.runtimeCompose)
+    implementation(libs.accompanist.pager)
+    implementation(libs.accompanist.pager.indicators)
 
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.hilt.android)

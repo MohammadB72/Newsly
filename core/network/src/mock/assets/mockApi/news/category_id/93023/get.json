@@ -1,0 +1,116 @@
+{
+  "httpStatusCode": 200,
+  "status": "SUCCESS",
+  "data": [
+    {
+      "id": 1542045,
+      "title": "NASA Image of the Day: Cassini among Saturn and its rings",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/SaturnInsideOut2_cassini_960.jpg",
+      "date": "2022-12-23T03:08:10",
+      "author": {
+        "name": "Mahdis Nasiri",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/278891-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/cassini-looks-out-from-saturn-apod"
+    },
+    {
+      "id": 1542048,
+      "title": "Twitter Blue users can now upload 60-minute videos",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Twitter-Blue-2-910x600.jpg",
+      "date": "2022-12-23T02:30:19",
+      "author": {
+        "name": "Mohammad Qureshi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/210361-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/twitter-blue-users-can-now-upload-60-minute-long-videos"
+    },
+    {
+      "id": 1541959,
+      "title": "Google will add a new testing layer to Chrome updates next year",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Chrome-1-910x600.jpg",
+      "date": "2022-12-22T21:30:09",
+      "author": {
+        "name": "Yunes Moradi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/57105-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/google-chrome-testing-release-update-early-stable"
+    },
+    {
+      "id": 1541978,
+      "title": "Apple found to be infringing on AliveCor's patents",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Apple-Watch-ECG-910x600.jpg",
+      "date": "2022-12-12T21:30:10",
+      "author": {
+        "name": "Nafiseh Shahbazi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/218286-142x142.jpeg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/itc-apple-watch-infringed-alivecors-ecg-patent"
+    },
+    {
+      "id": 1541967,
+      "title": "Disclosing the roadmap of pixel products",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Google-Pixel-Phone-910x600.jpg",
+      "date": "2022-12-12T21:30:10",
+      "author": {
+        "name": "Saba Selouki",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/277017-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/google-pixel-roadmap-leaked-2025"
+    },
+    {
+      "id": 1541751,
+      "title": "Chery electric flagship is introduced",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Chery-eQ7-Teaser-1_result_1-910x600.jpg",
+      "date": "2022-12-12T21:30:10",
+      "author": {
+        "name": "Saeed Alipour",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/32122-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/chery-is-working-on-eq7"
+    },
+    {
+      "id": 1541955,
+      "title": "Continued retrenchment on Twitter",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Twitter-Exit-910x600.jpg",
+      "date": "2022-12-12T21:30:10",
+      "author": {
+        "name": "Javad Taji",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/224206-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/twitter-lays-off-employees-in-public-policy"
+    },
+    {
+      "id": 1541948,
+      "title": "LastPass: Hackers have stolen users' encrypted data",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/LastPass-910x600.jpg",
+      "date": "2022-12-12T21:30:10",
+      "author": {
+        "name": "Mohammad Qureshi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/210361-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/23/lastpass-customer-password-vaults-stolen"
+    },
+    {
+      "id": 1541900,
+      "title": "Introducing the best Android browsers",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/0-9-910x600.jpg",
+      "date": "2022-12-12T21:30:10",
+      "author": {
+        "name": "Amir Hosseini",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/20493-142x142.jpg"
+      },
+      "link": "https://digiato.com/daily-timeline/page/2?skip=1542048"
+    },
+    {
+      "id": 1541847,
+      "title": "Bill Gates: Elon Musk makes random decisions on Twitter",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Bill-Gates-Elon-Musk-910x600.jpg",
+      "date": "2022-12-12T21:30:10",
+      "author": {
+        "name": "Zahra Maleki",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/52643-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/22/bill-gates-elon-musk-twitter-leadership-digital"
+    }
+  ]
+}

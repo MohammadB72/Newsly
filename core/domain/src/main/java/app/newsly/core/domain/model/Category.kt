@@ -5,4 +5,5 @@ data class Category(
     val title: String,
     val postsCount: Int,
     val icon: String?,
+    var news: List<News>? = null
 )
