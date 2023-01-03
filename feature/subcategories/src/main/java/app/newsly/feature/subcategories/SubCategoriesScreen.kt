@@ -3,6 +3,9 @@
 package app.newsly.feature.subcategories
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.ScrollableTabRow
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -11,9 +14,11 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import app.newsly.core.designsystem.component.PostCardSimple
 import app.newsly.core.domain.model.Category
 import app.newsly.core.model.RequestException
 import app.newsly.shared.resources.R
@@ -80,7 +85,9 @@ fun SuccessContent(
     val pagerState = rememberPagerState()
     val scope = rememberCoroutineScope()
 
-    Column {
+    Column(
+        modifier = Modifier.navigationBarsPadding()
+    ) {
         ScrollableTabRow(
             selectedTabIndex = pagerState.currentPage,
             backgroundColor = MaterialTheme.colorScheme.surface,
@@ -109,14 +116,19 @@ fun SuccessContent(
             }
         }
 
-        HorizontalPager(count = subcategories.size, state = pagerState) { page ->
+        HorizontalPager(
+            count = subcategories.size,
+            modifier = Modifier.fillMaxSize(),
+            state = pagerState,
+            verticalAlignment = Alignment.Top
+        ) { page ->
             if (subCategoriesNewsUiState.isNotEmpty()) {
                 when (val item = subCategoriesNewsUiState[page]) {
                     SubCategoriesNewsUiState.Loading -> {
                         CircularProgressIndicator()
                     }
                     is SubCategoriesNewsUiState.Success -> {
-                        NewsContentScreen(subCategoriesNewsUiState = item)
+                        NewsContent(subCategoriesNewsUiState = item)
                     }
                     is SubCategoriesNewsUiState.Failure -> {
                         FailureContent(exception = item.exception) {
@@ -130,6 +142,42 @@ fun SuccessContent(
             }
         }
     }
+}
+
+@Composable
+fun NewsContent(
+    modifier: Modifier = Modifier,
+    subCategoriesNewsUiState: SubCategoriesNewsUiState.Success,
+    onPostTapped: (postId: Int) -> Unit = {},
+) {
+    LazyColumn(
+        modifier = modifier,
+        state = rememberLazyListState()
+    ) {
+        items(
+            items = subCategoriesNewsUiState.newsList,
+            key = { post -> post.id }
+        ) { post ->
+            PostCardSimple(
+                id = post.id,
+                title = post.title,
+                imageUrl = post.image,
+                authorName = post.author.name,
+                authorAvatar = post.author.avatar,
+                postDate = post.date,
+                onPostTapped = onPostTapped,
+            )
+            PostListDivider()
+        }
+    }
+}
+
+@Composable
+private fun PostListDivider() {
+    Divider(
+        modifier = Modifier.padding(horizontal = 14.dp),
+        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.08f)
+    )
 }
 
 

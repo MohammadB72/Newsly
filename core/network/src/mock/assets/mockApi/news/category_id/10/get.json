@@ -1,0 +1,171 @@
+{
+  "httpStatusCode": 200,
+  "status": "SUCCESS",
+  "data": [
+    {
+      "id": 1420729,
+      "title": "Review of Surface Pro 8",
+      "image_url": "https://digiato.com/wp-content/uploads/2021/08/Digipic-Huawei-MatePad-10-910x600.jpg",
+      "date": "2022-12-23T03:08:10",
+      "author": {
+        "name": "Hamid Moghdisi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/34829-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2021/08/29/%d8%a8%d8%b1%d8%b1%d8%b3%db%8c-%d8%aa%d8%a8%d9%84%d8%aa-%d9%87%d9%88%d8%a7%d9%88%db%8c-%d9%85%db%8c%d8%aa-%d9%be%d8%af-%db%b1%db%b0-%d8%a7%db%8c%d9%86%da%86%db%8c"
+    },
+    {
+      "id": 1403593,
+      "title": "iPad Pro M1 review; A monster in a cage",
+      "image_url": "https://digiato.com/wp-content/uploads/2021/06/5-16-910x600.jpg",
+      "date": "2022-12-23T02:30:19",
+      "author": {
+        "name": "Mohammad Qureshi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/210361-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2021/06/20/%d8%a8%d8%b1%d8%b1%d8%b3%db%8c-%d8%a2%db%8c%d9%be%d8%af-%d9%be%d8%b1%d9%88-m1"
+    },
+    {
+      "id": 1373028,
+      "title": "iPad Pro M1 review; A monster in a cage",
+      "image_url": "https://digiato.com/wp-content/uploads/2021/02/Digipic-HuaweiMatepadT10-10-910x600.jpg",
+      "date": "2022-12-23T02:30:19",
+      "author": {
+        "name": "Ali Bagherzadeh",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/57085-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2021/02/24/%D8%A8%D8%B1%D8%B1%D8%B3%DB%8C-%D8%AA%D8%A8%D9%84%D8%AA-%D9%87%D9%88%D8%A7%D9%88%DB%8C-%D9%85%DB%8C%D8%AA-%D9%BE%D8%AF-%D8%AA%DB%8C-%DB%B1%DB%B0"
+    },
+    {
+      "id": 1516839,
+      "title": "Xiaomi Smart Band 7 review: more advanced with the usual weaknesses",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/10/Digipics-SmartBand7-09-800x800.jpg",
+      "date": "2022-12-23T03:08:10",
+      "author": {
+        "name": "Mahdis Nasiri",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/278891-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/04/xiaomi-smart-band-7-review"
+    },
+    {
+      "id": 1531567,
+      "title": "Galaxy Watch 5 Pro smart watch review; Professional and resistant",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/11/Digipics-GalaxyWatch5Pro-09-800x800.jpg",
+      "date": "2022-12-23T02:30:19",
+      "author": {
+        "name": "Mohammad Qureshi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/210361-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/11/24/samsung-galaxy-watch-5-pro-review"
+    },
+    {
+      "id": 1513151,
+      "title": "Huawei Watch GT3 Pro review: more beautiful than ever",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/08/Digipics-Huawei-WatchGT3Pro-02-800x800.jpg",
+      "date": "2022-12-22T21:30:09",
+      "author": {
+        "name": "Yunes Moradi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/57105-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/08/20/huawei-watch-gt-3-pro-review"
+    },
+    {
+      "id": 1531568,
+      "title": "TCL C635 Madiran TV review; Updated and high quality",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/11/DigiPics-TCL-65C635-13-800x800.jpg",
+      "date": "2022-12-23T03:08:10",
+      "author": {
+        "name": "Hamid Moghdisi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/34829-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/11/19/tcl-c635-4k-qled-google-tv-review"
+    },
+    {
+      "id": 1511592,
+      "title": "Review of new software features in Snowa smart TVs",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/08/Digipics-Snowa-Huma-04-800x800.jpg",
+      "date": "2022-12-23T02:30:19",
+      "author": {
+        "name": "Mohammad Qureshi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/210361-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/08/15/snowa-tv-ui-new-features"
+    },
+    {
+      "id": 1495133,
+      "title": "Xvision 50XYU725 TV review; Quality beyond expectation",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/06/Digipic-XVision-50XYU725-01.jpg",
+      "date": "2022-12-23T02:30:19",
+      "author": {
+        "name": "Ali Bagherzadeh",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/57085-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/06/14/xvision-50xyu725-smart-tv-review"
+    },
+    {
+      "id": 1516110,
+      "title": "Samsung Odyssey G9 gaming monitor review; A unique experience",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/08/Digipics-Odyssey-Monitor-7-800x800.jpg",
+      "date": "2022-12-23T03:08:10",
+      "author": {
+        "name": "Mahdis Nasiri",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/278891-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/08/30/samsung-odyssey-g9-gaming-monior-review"
+    },
+    {
+      "id": 1507122,
+      "title": "Investigating the built-in audio system Morph / Factor model SSE2",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/07/Digipics-Factor-SoundSystem-12-800x800.jpg",
+      "date": "2022-12-23T02:30:19",
+      "author": {
+        "name": "Mohammad Qureshi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/210361-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/07/27/morph-factor-built-in-sound-system"
+    },
+    {
+      "id": 1503289,
+      "title": "Get to know the types of Toshiba external hard drives",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/07/Digipic-Toshiba-Canvio-External-HDD-09-910x600.jpg",
+      "date": "2022-12-22T21:30:09",
+      "author": {
+        "name": "Yunes Moradi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/57105-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/07/13/toshiba-canvio-external-hdd-overview"
+    },
+    {
+      "id": 1541283,
+      "title": "Review of Acer Aspire 5 model 2022; Flawless economic laptop",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Digipics-AcerAspire5-A515-01-800x800.jpg",
+      "date": "2022-12-23T03:08:10",
+      "author": {
+        "name": "Mahdis Nasiri",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/278891-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/20/acer-aspire-5-2022-review"
+    },
+    {
+      "id": 1517353,
+      "title": "MacBook Air M2 review; An attractive product in an inappropriate place",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/09/MacBook-Air-M2-2-800x800.jpg",
+      "date": "2022-12-23T02:30:19",
+      "author": {
+        "name": "Mohammad Qureshi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/210361-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/09/05/macbook-air-m2-review"
+    },
+    {
+      "id": 1504083,
+      "title": "Review of Huawei Matebook 14 after three months of use",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/02/Digipic-Huawei-MateBook14-13.jpg",
+      "date": "2022-12-22T21:30:09",
+      "author": {
+        "name": "Yunes Moradi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/57105-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/07/17/huawei-matebook-14-long-term-review"
+    }
+  ]
+}

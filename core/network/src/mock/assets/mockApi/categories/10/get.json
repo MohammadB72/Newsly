@@ -3,6 +3,12 @@
   "status": "SUCCESS",
   "data": [
     {
+      "id": 10,
+      "title": "All",
+      "posts_count": 67796,
+      "icon": "https://digiato.com/wp-content/uploads/2022/07/tech.svg"
+    },
+    {
       "id": 93020,
       "title": "Tablet",
       "posts_count": 19,
