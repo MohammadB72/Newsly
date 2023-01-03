@@ -39,7 +39,9 @@ class GetNewsByCategoryUseCase @Inject constructor(
                         }
                     ))
                 }
-                .doOnFailure { }
+                .doOnFailure { exception ->
+                    emit(RequestResult.Fail(exception = exception))
+                }
         }
     }
 }

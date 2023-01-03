@@ -42,7 +42,7 @@ fun SubCategoriesRoute(
 @Composable
 fun SubCategoriesScreen(
     uiState: SubCategoriesUiState,
-    subCategoriesNewsUiState: SubCategoriesNewsUiState,
+    subCategoriesNewsUiState: Map<Int, SubCategoriesNewsUiState>,
     onFailureOccurred: @Composable (RequestException) -> Unit
 ) {
     Box(
@@ -75,7 +75,7 @@ fun LoadingContent() {
 @Composable
 fun SuccessContent(
     subcategories: List<Category>,
-    subCategoriesNewsUiState: SubCategoriesNewsUiState,
+    subCategoriesNewsUiState: Map<Int, SubCategoriesNewsUiState>,
 ) {
     val pagerState = rememberPagerState()
     val scope = rememberCoroutineScope()
@@ -110,19 +110,24 @@ fun SuccessContent(
         }
 
         HorizontalPager(count = subcategories.size, state = pagerState) { page ->
+            if (subCategoriesNewsUiState.isNotEmpty()) {
+                when (val item = subCategoriesNewsUiState[page]) {
+                    SubCategoriesNewsUiState.Loading -> {
+                        CircularProgressIndicator()
+                    }
+                    is SubCategoriesNewsUiState.Success -> {
+                        NewsContentScreen(subCategoriesNewsUiState = item)
+                    }
+                    is SubCategoriesNewsUiState.Failure -> {
+                        FailureContent(exception = item.exception) {
 
-            when (subCategoriesNewsUiState) {
-                SubCategoriesNewsUiState.Loading -> {
+                        }
+                    }
+                    null -> {
 
-                }
-                is SubCategoriesNewsUiState.Success -> {
-                    NewsContent(subCategoriesNewsUiState = subCategoriesNewsUiState)
-                }
-                is SubCategoriesNewsUiState.Failure -> {
-
+                    }
                 }
             }
-
         }
     }
 }

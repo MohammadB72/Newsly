@@ -1,0 +1,39 @@
+{
+  "httpStatusCode": 200,
+  "status": "SUCCESS",
+  "data": [
+    {
+      "id": 1541283,
+      "title": "Review of Acer Aspire 5 model 2022; Flawless economic laptop",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/12/Digipics-AcerAspire5-A515-01-800x800.jpg",
+      "date": "2022-12-23T03:08:10",
+      "author": {
+        "name": "Mahdis Nasiri",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/278891-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/12/20/acer-aspire-5-2022-review"
+    },
+    {
+      "id": 1517353,
+      "title": "MacBook Air M2 review; An attractive product in an inappropriate place",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/09/MacBook-Air-M2-2-800x800.jpg",
+      "date": "2022-12-23T02:30:19",
+      "author": {
+        "name": "Mohammad Qureshi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/210361-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/09/05/macbook-air-m2-review"
+    },
+    {
+      "id": 1504083,
+      "title": "Review of Huawei Matebook 14 after three months of use",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/02/Digipic-Huawei-MateBook14-13.jpg",
+      "date": "2022-12-22T21:30:09",
+      "author": {
+        "name": "Yunes Moradi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/57105-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/07/17/huawei-matebook-14-long-term-review"
+    }
+  ]
+}

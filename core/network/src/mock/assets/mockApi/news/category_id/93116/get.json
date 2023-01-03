@@ -1,0 +1,39 @@
+{
+  "httpStatusCode": 200,
+  "status": "SUCCESS",
+  "data": [
+    {
+      "id": 1516110,
+      "title": "Samsung Odyssey G9 gaming monitor review; A unique experience",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/08/Digipics-Odyssey-Monitor-7-800x800.jpg",
+      "date": "2022-12-23T03:08:10",
+      "author": {
+        "name": "Mahdis Nasiri",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/278891-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/08/30/samsung-odyssey-g9-gaming-monior-review"
+    },
+    {
+      "id": 1507122,
+      "title": "Investigating the built-in audio system Morph / Factor model SSE2",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/07/Digipics-Factor-SoundSystem-12-800x800.jpg",
+      "date": "2022-12-23T02:30:19",
+      "author": {
+        "name": "Mohammad Qureshi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/210361-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/07/27/morph-factor-built-in-sound-system"
+    },
+    {
+      "id": 1503289,
+      "title": "Get to know the types of Toshiba external hard drives",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/07/Digipic-Toshiba-Canvio-External-HDD-09-910x600.jpg",
+      "date": "2022-12-22T21:30:09",
+      "author": {
+        "name": "Yunes Moradi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/57105-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/07/13/toshiba-canvio-external-hdd-overview"
+    }
+  ]
+}

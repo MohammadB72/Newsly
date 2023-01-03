@@ -1,0 +1,39 @@
+{
+  "httpStatusCode": 200,
+  "status": "SUCCESS",
+  "data": [
+    {
+      "id": 1531568,
+      "title": "TCL C635 Madiran TV review; Updated and high quality",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/11/DigiPics-TCL-65C635-13-800x800.jpg",
+      "date": "2022-12-23T03:08:10",
+      "author": {
+        "name": "Hamid Moghdisi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/34829-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/11/19/tcl-c635-4k-qled-google-tv-review"
+    },
+    {
+      "id": 1511592,
+      "title": "Review of new software features in Snowa smart TVs",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/08/Digipics-Snowa-Huma-04-800x800.jpg",
+      "date": "2022-12-23T02:30:19",
+      "author": {
+        "name": "Mohammad Qureshi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/210361-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/08/15/snowa-tv-ui-new-features"
+    },
+    {
+      "id": 1495133,
+      "title": "Xvision 50XYU725 TV review; Quality beyond expectation",
+      "image_url": "https://digiato.com/wp-content/uploads/2022/06/Digipic-XVision-50XYU725-01.jpg",
+      "date": "2022-12-23T02:30:19",
+      "author": {
+        "name": "Ali Bagherzadeh",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/57085-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2022/06/14/xvision-50xyu725-smart-tv-review"
+    }
+  ]
+}

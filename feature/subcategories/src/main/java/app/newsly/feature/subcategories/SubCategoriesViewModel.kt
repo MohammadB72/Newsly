@@ -27,7 +27,7 @@ class SubCategoriesViewModel @Inject constructor(
     val uiState = _uiState.asStateFlow()
 
     private val _subCategoriesNewsUiState =
-        MutableStateFlow<SubCategoriesNewsUiState>(SubCategoriesNewsUiState.Loading)
+        MutableStateFlow<Map<Int, SubCategoriesNewsUiState>>(HashMap())
     val subCategoriesNewsUiState = _subCategoriesNewsUiState.asStateFlow()
 
     init {
@@ -44,7 +44,7 @@ class SubCategoriesViewModel @Inject constructor(
                         }
                         is RequestResult.Success -> {
                             result.data.forEach {
-                                getNewsByCategory(it.id)
+                                getNewsByCategory(result.data.indexOf(it), it.id)
                             }
                             SubCategoriesUiState.Success(result.data)
                         }
@@ -57,30 +57,30 @@ class SubCategoriesViewModel @Inject constructor(
                         }
                     }
                 }
-
             }
         }
     }
 
-    private fun getNewsByCategory(categoryId: Int) {
+    private fun getNewsByCategory(id: Int, categoryId: Int) {
         viewModelScope.launch {
             getNewsByCategoryUseCase.invoke(categoryId = categoryId, page = 1).collect { result ->
-                _subCategoriesNewsUiState.update {
-                    when (result) {
-                        is RequestResult.Loading -> {
-                            SubCategoriesNewsUiState.Loading
-                        }
-                        is RequestResult.Success -> {
-                            SubCategoriesNewsUiState.Success(
-                                categoryId = categoryId,
-                                newsList = result.data
-                            )
-                        }
-                        is RequestResult.Fail -> {
-                            SubCategoriesNewsUiState.Failure(result.exception)
-                        }
+                val a = when (result) {
+                    is RequestResult.Loading -> {
+                        SubCategoriesNewsUiState.Loading
+                    }
+                    is RequestResult.Success -> {
+                        SubCategoriesNewsUiState.Success(
+                            categoryId = categoryId,
+                            newsList = result.data
+                        )
+                    }
+                    is RequestResult.Fail -> {
+                        SubCategoriesNewsUiState.Failure(result.exception)
                     }
                 }
+                val hashMap = HashMap(_subCategoriesNewsUiState.value)
+                hashMap[id] = a
+                _subCategoriesNewsUiState.value = hashMap
             }
         }
     }

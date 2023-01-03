@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import app.newsly.core.designsystem.component.PostCardSimple
 
 @Composable
-fun NewsContent(
+fun NewsContentScreen(
     modifier: Modifier = Modifier,
     subCategoriesNewsUiState: SubCategoriesNewsUiState.Success,
     onPostTapped: (postId: Int) -> Unit = {},

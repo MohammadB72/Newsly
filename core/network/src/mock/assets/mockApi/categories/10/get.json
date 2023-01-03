@@ -3,21 +3,15 @@
   "status": "SUCCESS",
   "data": [
     {
-      "id": 93022,
-      "title": "Speakers",
-      "posts_count": 27,
+      "id": 93020,
+      "title": "Tablet",
+      "posts_count": 19,
       "icon": ""
     },
     {
       "id": 93023,
       "title": "Wearable",
       "posts_count": 38,
-      "icon": ""
-    },
-    {
-      "id": 93020,
-      "title": "Tablet",
-      "posts_count": 19,
       "icon": ""
     },
     {

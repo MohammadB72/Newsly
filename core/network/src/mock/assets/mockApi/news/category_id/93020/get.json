@@ -1,0 +1,39 @@
+{
+  "httpStatusCode": 200,
+  "status": "SUCCESS",
+  "data": [
+    {
+      "id": 1420729,
+      "title": "Review of Surface Pro 8",
+      "image_url": "https://digiato.com/wp-content/uploads/2021/08/Digipic-Huawei-MatePad-10-910x600.jpg",
+      "date": "2022-12-23T03:08:10",
+      "author": {
+        "name": "Hamid Moghdisi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/34829-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2021/08/29/%d8%a8%d8%b1%d8%b1%d8%b3%db%8c-%d8%aa%d8%a8%d9%84%d8%aa-%d9%87%d9%88%d8%a7%d9%88%db%8c-%d9%85%db%8c%d8%aa-%d9%be%d8%af-%db%b1%db%b0-%d8%a7%db%8c%d9%86%da%86%db%8c"
+    },
+    {
+      "id": 1403593,
+      "title": "iPad Pro M1 review; A monster in a cage",
+      "image_url": "https://digiato.com/wp-content/uploads/2021/06/5-16-910x600.jpg",
+      "date": "2022-12-23T02:30:19",
+      "author": {
+        "name": "Mohammad Qureshi",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/210361-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2021/06/20/%d8%a8%d8%b1%d8%b1%d8%b3%db%8c-%d8%a2%db%8c%d9%be%d8%af-%d9%be%d8%b1%d9%88-m1"
+    },
+    {
+      "id": 1373028,
+      "title": "iPad Pro M1 review; A monster in a cage",
+      "image_url": "https://digiato.com/wp-content/uploads/2021/02/Digipic-HuaweiMatepadT10-10-910x600.jpg",
+      "date": "2022-12-23T02:30:19",
+      "author": {
+        "name": "Ali Bagherzadeh",
+        "avatar": "https://digiato.com/wp-content/uploads/avatars/57085-142x142.jpg"
+      },
+      "link": "https://digiato.com/article/2021/02/24/%D8%A8%D8%B1%D8%B1%D8%B3%DB%8C-%D8%AA%D8%A8%D9%84%D8%AA-%D9%87%D9%88%D8%A7%D9%88%DB%8C-%D9%85%DB%8C%D8%AA-%D9%BE%D8%AF-%D8%AA%DB%8C-%DB%B1%DB%B0"
+    }
+  ]
+}
